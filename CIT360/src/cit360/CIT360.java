@@ -5,6 +5,9 @@
  */
 package cit360;
 
+import control.WordGameControl;
+import threadsEtc.TestRunnables;
+
 /**
  *
  * @author Bryan
@@ -15,7 +18,16 @@ public class CIT360 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       /* Collections
+        WordGameControl.modifyTreeQuantities();
+        WordGameControl.modifyListQualities();
+        WordGameControl.modifySetSize();
+        WordGameControl.modifyQueueShape();
+        WordGameControl.modifyMapColor();
+        */
+        
+       (new Thread(new TestRunnables())).start();
+        
     }
     
 }
