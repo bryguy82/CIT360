@@ -137,23 +137,4 @@ public class SentenceControl implements Serializable {
         return adjectiveMap;
     }
 
-    /* FOR HASHMAPS
-
-  }https://www.w3schools.com/java/java_hashmap.asp
-    get() remove() size()
-    
-    QUEUE INFO
-    LinkedList, ArrayBlockingQueue and PriorityQueue are the most frequently used implementations.
-    Methods in Queue:
-
-add()- This method is used to add elements at the tail of queue. More specifically, at the last of linkedlist if it is used, or according to the priority in case of priority queue implementation.
-peek()- This method is used to view the head of queue without removing it. It returns Null if the queue is empty.
-element()- This method is similar to peek(). It throws NoSuchElementException when the queue is empty.
-poll()- This method removes and returns the head of the queue. It returns null if the queue is empty.
-size()- This method return the no. of elements in the queue.
-    
-    OPERATION: Insert, remove, examine
-    THROWS EXCEPTION: add(element), remove(), element()
-    RETURN VALUES: offer(element), poll(), peek()
-     */
 }
