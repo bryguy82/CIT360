@@ -5,25 +5,40 @@
  */
 package threadsEtc;
 
+import control.CollectionControl;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  *
  * @author Bryan
  */
 public class TestRunnables implements Runnable {
+    // Thread tasks
+    private final AtomicInteger atomNum = new AtomicInteger(0);
+
+    public AtomicInteger getAtomNum() {
+        return atomNum;
+    }
     
+    ArrayList list = new ArrayList<>();
+    
+    @Override
     public void run() {
-        // Something to process/run
-        // FOR loop with messages
-        pause(3000);
-    }
-    
-    
-    
-    protected void pause(int milliseconds) {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException ie) {
-            System.out.println("Interrupted again.");
+        String name = Thread.currentThread().getName();
+        
+        for (int i : CollectionControl.buildQuantities()) {
+            atomNum.getAndIncrement();
+            System.out.println("Random number: " + (i) + " thread: " + name + " increment: " + atomNum);
         }
+
     }
+    
+//    protected void pause(int milliseconds) {
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException ie) {
+//            System.out.println("Interrupted again.");
+//        }
+//    }
 }

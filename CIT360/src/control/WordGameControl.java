@@ -29,7 +29,7 @@ public class WordGameControl implements Serializable {
 /*--------------------TREE------------------------------10*/    
     public static TreeSet<Integer> modifyTreeQuantities() {
         
-        TreeSet<Integer> modifyQuantities = SentenceControl.buildQuantities();
+        TreeSet<Integer> modifyQuantities = CollectionControl.buildQuantities();
         
         System.out.println("The tree includes: " + modifyQuantities);
         
@@ -37,7 +37,7 @@ public class WordGameControl implements Serializable {
         modifyQuantities.remove(55);
         modifyQuantities.add(74);
         
-        System.out.println("The tree includes now: " + modifyQuantities);
+        System.out.println("After replacing 55 with 74: " + modifyQuantities);
         System.out.println("There are " + modifyQuantities.size() + " items in this tree.\n");
         
         return modifyQuantities;
@@ -47,7 +47,7 @@ public class WordGameControl implements Serializable {
 /*--------------------LIST-------------------------------7*/
     public static List<String> modifyListQualities() {
         
-        List<String> modifyQuality = SentenceControl.buildQualities();
+        List<String> modifyQuality = CollectionControl.buildQualities();
         
         System.out.println("The list of qualities includes: " + modifyQuality);
         
@@ -70,8 +70,8 @@ public class WordGameControl implements Serializable {
  /*--------------------SET-------------------------------11*/   
     public static Set<String> modifySetSize() {
         
-        Set<String> modifySize1 = SentenceControl.buildSize1();
-        Set<String> modifySize2 = SentenceControl.buildSize2();
+        Set<String> modifySize1 = CollectionControl.buildSize1();
+        Set<String> modifySize2 = CollectionControl.buildSize2();
         
         System.out.println("Set number one includes: " + modifySize1);
         System.out.println("Set number two includes: " + modifySize2);
@@ -104,7 +104,7 @@ public class WordGameControl implements Serializable {
 /*--------------------QUEUE------------------------------15*/
     public static Queue<String> modifyQueueShape() {
         
-        Queue<String> modifyShape = SentenceControl.buildShapes();
+        Queue<String> modifyShape = CollectionControl.buildShapes();
         
         System.out.println("This queue contains: " + modifyShape);
         
@@ -124,7 +124,7 @@ public class WordGameControl implements Serializable {
 /*--------------------MAP------------------------------12*/
     public static Map<Integer, String> modifyMapColor() {
         
-        Map<Integer, String> modifyColor = SentenceControl.buildColor();
+        Map<Integer, String> modifyColor = CollectionControl.buildColor();
         
         System.out.println("The color map contains: " + modifyColor);
         
@@ -146,6 +146,7 @@ public class WordGameControl implements Serializable {
         modifyColor.put(9, "brown");
         modifyColor.put(10, "orange");
         modifyColor.put(11, "white");
+        System.out.println("The value at #4 is " + modifyColor.get(4));
         System.out.println("The completed map has: " + modifyColor);
         System.out.println("There are: " + modifyColor.size() + " colors in the map.\n");
         

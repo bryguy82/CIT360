@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package view;
+
+import java.io.IOException;
 
 /**
  *
  * @author Bryan
  */
-public enum NounCategory {
-    PERSON,
-    PLACE,
-    FOOD,
-    OBJECT,
-    ANIMAL;
+public interface View {
+
+    public void displayView() throws IOException;
 
 }

@@ -13,18 +13,40 @@ import java.io.Serializable;
  */
 public class Noun implements Serializable {
     
-    private String name;
+    private String person;
+    private String place;
+    private String thing;
     
     public Noun() {
         //Empty contructor
     }
 
-    public String getName() {
-        return name;
+    public String getPerson() {
+        return person;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPerson(String person) {
+        this.person = person;
     }
 
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public String getThing() {
+        return thing;
+    }
+
+    public void setThing(String thing) {
+        this.thing = thing;
+    }
+
+    @Override
+    public String toString() {
+        return "person, place, or thing";
+    }
 }

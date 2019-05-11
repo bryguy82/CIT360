@@ -16,14 +16,15 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
  * @author Bryan
  */
-public class SentenceControl implements Serializable {
+public class CollectionControl implements Serializable {
 
-    public SentenceControl() {
+    public CollectionControl() {
         //Empty constructor
     }
 /*--------------------TREE------------------------------*/
@@ -31,16 +32,11 @@ public class SentenceControl implements Serializable {
         // Create quantity tree
         TreeSet<Integer> adjectiveQuantity = new TreeSet<>();
 
-        adjectiveQuantity.add(34);
-        adjectiveQuantity.add(15);
-        adjectiveQuantity.add(19);
-        adjectiveQuantity.add(25);
-        adjectiveQuantity.add(6);
-        adjectiveQuantity.add(62);
-        adjectiveQuantity.add(41);
-        adjectiveQuantity.add(23);
         adjectiveQuantity.add(55);
-        adjectiveQuantity.add(45);
+        
+        for (int i = 0; i < 14; i ++) {
+            adjectiveQuantity.add(ThreadLocalRandom.current().nextInt(0, 70));
+        } // An amazing random number generator between values
 
         return adjectiveQuantity;
     }
