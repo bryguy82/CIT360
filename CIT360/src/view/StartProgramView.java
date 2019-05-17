@@ -19,20 +19,22 @@ public class StartProgramView extends ViewStarter {
 
     @Override
     protected String getMessage() {
-        return "Welcome to CIT360";
+        return "Welcome to CIT 360";
     }
 
     /**
      * No input here
+     *
      * @return
      */
     @Override
     public String[] getInputs() {
         return null;
     }
-    
+
     /**
      * Perform the action indicated by the user's input.
+     *
      * @param inputs
      * @return true to repeat view, and false to exit to previous view.
      */
@@ -52,4 +54,3 @@ public class StartProgramView extends ViewStarter {
         mainMenu.displayView();
     }
 }
-

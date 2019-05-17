@@ -5,7 +5,7 @@
  */
 package view;
 
-import control.WordGameControl;
+import control.CollectionManipulateControl;
 import java.io.IOException;
 
 /**
@@ -17,15 +17,17 @@ public class SetView extends ViewStarter {
     public SetView() {
         // Empty constructor
     }
-    
+
     @Override
     protected String getMessage() {
         return "Press D to display or R to return\n"
-              + "D - Display\n"
-              + "R - Return";
+                + "D - Display\n"
+                + "R - Return";
     }
+
     /**
      * Get the set of inputs from the user.
+     *
      * @return
      */
     @Override
@@ -42,6 +44,7 @@ public class SetView extends ViewStarter {
 
     /**
      * Perform the action indicated by the user's input.
+     *
      * @param inputs
      * @return true to repeat view, and false to exit to previous view.
      */
@@ -62,7 +65,7 @@ public class SetView extends ViewStarter {
 
     // Add other views here----- 
     private void showSet() throws IOException {
-        WordGameControl.modifySetSize();
+        CollectionManipulateControl.modifySetSize();
         pause(2000);
     }
 }

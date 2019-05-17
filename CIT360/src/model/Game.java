@@ -12,11 +12,12 @@ import java.io.Serializable;
  * @author Bryan
  */
 public class Game implements Serializable {
-    
+
     private Game theGame;
     private Player thePlayer;
-    private Sentence theSentence;
-    
+    private WordBank wordBank;
+    private String theSentence;
+
     public Game() {
         // Empty constructor        
     }
@@ -37,17 +38,25 @@ public class Game implements Serializable {
         this.thePlayer = thePlayer;
     }
 
-    public Sentence getTheSentence() {
+    public WordBank getWordBank() {
+        return wordBank;
+    }
+
+    public void setWordBank(WordBank wordBank) {
+        this.wordBank = wordBank;
+    }
+
+    public String getTheSentence() {
         return theSentence;
     }
 
-    public void setTheSentence(Sentence theSentence) {
+    public void setTheSentence(String theSentence) {
         this.theSentence = theSentence;
     }
-    
+
     @Override
     public String toString() {
         return "Game " + theGame;
     }
-    
+
 }

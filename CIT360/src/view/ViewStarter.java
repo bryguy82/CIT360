@@ -18,34 +18,34 @@ public abstract class ViewStarter implements View {
 
     protected final BufferedReader keyboard = CIT360.getInFile();
     protected final PrintWriter console = CIT360.getOutFile();
-    
+
     public void ViewStarter() {
         // Empty constructor
     }
-    
+
     /**
      * Force child views to display a message
      */
     protected abstract String getMessage();
-    
+
     /**
      * Force child views to get inputs
      */
     protected abstract String[] getInputs() throws IOException;
-    
+
     /**
      * Force child views to do an action
      */
     protected abstract boolean doAction(String[] inputs) throws IOException;
-    
+
     /**
-     * 
+     *
      */
     public void displayView() throws IOException {
-        
+
         boolean keepGoing = true;
-        
-        while(keepGoing == true) {
+
+        while (keepGoing == true) {
             // Retrieve messages and print valid messages
             String message = getMessage();
             if (message != null) {
@@ -55,11 +55,12 @@ public abstract class ViewStarter implements View {
             String[] inputs = getInputs();
             keepGoing = doAction(inputs);
         }
-        
+
     }
-    
+
     /**
      * Get good input from the user
+     *
      * @param prompt
      * @param allowEmpty
      * @return input
@@ -88,9 +89,11 @@ public abstract class ViewStarter implements View {
         }
         return input;
     }
-    
-        /**
-     * An overloaded version of getUserInput that sets allowEmpty to false so we don't have to type it ourselves.
+
+    /**
+     * An overloaded version of getUserInput that sets allowEmpty to false so we
+     * don't have to type it ourselves.
+     *
      * @param prompt
      * @return false prompt
      */
@@ -106,4 +109,3 @@ public abstract class ViewStarter implements View {
         }
     }
 }
-

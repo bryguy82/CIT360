@@ -5,7 +5,7 @@
  */
 package view;
 
-import control.WordGameControl;
+import control.CollectionManipulateControl;
 import java.io.IOException;
 
 /**
@@ -17,15 +17,17 @@ public class TreeView extends ViewStarter {
     public TreeView() {
         //Empty contructor
     }
-    
+
     @Override
     protected String getMessage() {
         return "Press D to display or R to return\n"
-              + "D - Display\n"
-              + "R - Return";
+                + "D - Display\n"
+                + "R - Return";
     }
+
     /**
      * Get the set of inputs from the user.
+     *
      * @return
      */
     @Override
@@ -42,13 +44,13 @@ public class TreeView extends ViewStarter {
 
     /**
      * Perform the action indicated by the user's input.
+     *
      * @param inputs
      * @return true to repeat view, and false to exit to previous view.
      */
     @Override
     public boolean doAction(String[] inputs) throws IOException {
 
-        
         switch (inputs[0]) {
             case "D": // Tree
                 showTree();
@@ -63,7 +65,7 @@ public class TreeView extends ViewStarter {
 
     // Add other views here----- 
     private void showTree() throws IOException {
-        WordGameControl.modifyTreeQuantities();
+        CollectionManipulateControl.modifyTreeQuantities();
         pause(2000);
     }
 }

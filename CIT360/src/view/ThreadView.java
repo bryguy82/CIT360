@@ -17,17 +17,19 @@ public class ThreadView extends ViewStarter {
     public ThreadView() {
         // Empty constructor
     }
-    
+
     @Override
     protected String getMessage() {
         return "There are three options to choose from:\n"
-              + "L - Looped thread\n"
-              + "I - Independent threads\n"
-              + "M - Multiple threads\n"
-              + "R - Return";
+                + "L - Looped thread\n"
+                + "I - Independent threads\n"
+                + "M - Multiple threads\n"
+                + "R - Return";
     }
+
     /**
      * Get the set of inputs from the user.
+     *
      * @return
      */
     @Override
@@ -44,6 +46,7 @@ public class ThreadView extends ViewStarter {
 
     /**
      * Perform the action indicated by the user's input.
+     *
      * @param inputs
      * @return true to repeat view, and false to exit to previous view.
      */
@@ -73,10 +76,12 @@ public class ThreadView extends ViewStarter {
         TestThreads showThread = new TestThreads();
         showThread.loopThreads();
     }
+
     private void showIndependent() {
         TestThreads showThread = new TestThreads();
         showThread.independentThreads();
     }
+
     private void showMultiple() {
         TestThreads showThread = new TestThreads();
         showThread.executorThreads();

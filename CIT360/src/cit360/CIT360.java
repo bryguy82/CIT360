@@ -69,7 +69,7 @@ public class CIT360 {
             logFile = new PrintWriter("logFile.txt");
 
             // Welcome and main menu
-            // Let's get this party started!
+            // Let's get this party started!            
             View startProgramView = new StartProgramView();
             startProgramView.displayView();
 
@@ -96,21 +96,6 @@ public class CIT360 {
             }
         }
 
-        /*       
-        // Collections
-        WordGameControl.modifyTreeQuantities();
-        WordGameControl.modifyListQualities();
-        WordGameControl.modifySetSize();
-        WordGameControl.modifyQueueShape();
-        WordGameControl.modifyMapColor();
-         */
- /*
-        // Executors, Threads, and Runnables
-        TestThreads testing = new TestThreads();
-        testing.loopThreads();
-        testing.independentThreads();
-        testing.executorThreads();
-         */
     }
 
 }

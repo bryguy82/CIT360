@@ -12,28 +12,31 @@ import java.io.Serializable;
  * @author Bryan
  */
 public class Adjective implements Serializable {
-    
-    private int quantity;
+
+    private String quantity;
     private String quality;
     private String size;
-    private String age;
+    //private String age;
     private String shape;
     private String color;
-    
-    public Adjective(int quantity, String quality, String size, String age, String shape, String color) {
-        setQuantity(quantity);
-        setQuality(quality);
-        setSize(size);
-        setAge(age);
-        setShape(shape);
-        setColor(color);
+
+//    public Adjective(String quantity, String quality, String size, String age, String shape, String color) {
+//        setQuantity(quantity);
+//        setQuality(quality);
+//        setSize(size);
+//        setAge(age);
+//        setShape(shape);
+//        setColor(color);
+//    }
+    public Adjective() {
+        // Empty contructor
     }
 
-    public int getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
@@ -53,13 +56,13 @@ public class Adjective implements Serializable {
         this.size = size;
     }
 
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
+//    public String getAge() {
+//        return age;
+//    }
+//
+//    public void setAge(String age) {
+//        this.age = age;
+//    }
 
     public String getShape() {
         return shape;
@@ -77,6 +80,4 @@ public class Adjective implements Serializable {
         this.color = color;
     }
 
-    
-    
 }

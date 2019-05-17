@@ -5,7 +5,7 @@
  */
 package view;
 
-import control.WordGameControl;
+import control.CollectionManipulateControl;
 import java.io.IOException;
 
 /**
@@ -17,15 +17,17 @@ public class ListView extends ViewStarter {
     public ListView() {
         // Empty contructor
     }
-    
+
     @Override
     protected String getMessage() {
         return "Press D to display or R to return\n"
-              + "D - Display\n"
-              + "R - Return";
+                + "D - Display\n"
+                + "R - Return";
     }
+
     /**
      * Get the set of inputs from the user.
+     *
      * @return
      */
     @Override
@@ -42,6 +44,7 @@ public class ListView extends ViewStarter {
 
     /**
      * Perform the action indicated by the user's input.
+     *
      * @param inputs
      * @return true to repeat view, and false to exit to previous view.
      */
@@ -62,7 +65,7 @@ public class ListView extends ViewStarter {
 
     // Add other views here----- 
     private void showList() throws IOException {
-        WordGameControl.modifyListQualities();
+        CollectionManipulateControl.modifyListQualities();
         pause(2000);
     }
 }

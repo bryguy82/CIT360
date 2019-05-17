@@ -9,25 +9,25 @@ package exception;
  *
  * @author Bryan
  */
-public class SentenceException extends Exception {
-    
-    public SentenceException() {
+public class SentenceGameControlException extends Exception {
+
+    public SentenceGameControlException() {
         // empty constructor
     }
 
-    public SentenceException(String message, Throwable cause, boolean enableSuppression, boolean writeableStackTrace) {
+    public SentenceGameControlException(String message, Throwable cause, boolean enableSuppression, boolean writeableStackTrace) {
         super(message, cause, enableSuppression, writeableStackTrace);
     }
 
-    public SentenceException(String message, Throwable cause) {
+    public SentenceGameControlException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public SentenceException(String message) {
+    public SentenceGameControlException(String message) {
         super(message);
     }
 
-    public SentenceException(Throwable cause) {
+    public SentenceGameControlException(Throwable cause) {
         super(cause);
     }
 }

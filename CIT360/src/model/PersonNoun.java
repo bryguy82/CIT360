@@ -11,14 +11,13 @@ import java.io.Serializable;
  *
  * @author Bryan
  */
-public class Noun implements Serializable {
-    
+public class PersonNoun implements Serializable {
+
     private String person;
-    private String place;
-    private String thing;
-    
-    public Noun() {
-        //Empty contructor
+//    private String place;
+
+    public PersonNoun(String person) {
+        setPerson(person);
     }
 
     public String getPerson() {
@@ -27,22 +26,6 @@ public class Noun implements Serializable {
 
     public void setPerson(String person) {
         this.person = person;
-    }
-
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
-    }
-
-    public String getThing() {
-        return thing;
-    }
-
-    public void setThing(String thing) {
-        this.thing = thing;
     }
 
     @Override

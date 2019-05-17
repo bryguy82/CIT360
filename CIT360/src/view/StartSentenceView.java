@@ -5,24 +5,24 @@
  */
 package view;
 
-import control.CollectionManipulateControl;
+import cit360.CIT360;
+import control.SentenceGameControl;
 import java.io.IOException;
+import model.Game;
 
 /**
  *
  * @author Bryan
  */
-public class QueueView extends ViewStarter {
+public class StartSentenceView extends ViewStarter {
 
-    public QueueView() {
+    public StartSentenceView() {
         // Empty contructor
     }
 
     @Override
     protected String getMessage() {
-        return "Press D to display or R to return\n"
-                + "D - Display\n"
-                + "R - Return";
+        return "Welcome to the Crazy Sentence.";
     }
 
     /**
@@ -36,7 +36,7 @@ public class QueueView extends ViewStarter {
         // Declare the array to have the number of elements you intend to get from the user.
         String[] inputs = new String[1];
 
-        inputs[0] = getUserInput("Please make a selection.").trim().toUpperCase();
+        inputs[0] = getUserInput("Please enter your name.").trim().toUpperCase();
 
         // Repeat for each input you need, putting it into its proper slot in the array.
         return inputs;
@@ -51,21 +51,30 @@ public class QueueView extends ViewStarter {
     @Override
     public boolean doAction(String[] inputs) throws IOException {
 
-        switch (inputs[0]) {
-            case "D": // Queue
-                showQueue();
-                return false;
-            case "R":
-                return false;
-            default:
-                this.console.println("Invaild selection.  Please try again");
+        if (inputs[0] == null || inputs[0].equals("")) {
+            this.console.println("Please enter your name again");
+            return false;
         }
-        return true;
+
+        String playerName = inputs[0];
+        buildAndStartSentenceGame(playerName);
+
+        // EXIT VIEW HERE
+        return false;
     }
 
-    // Add other views here----- 
-    private void showQueue() throws IOException {
-        CollectionManipulateControl.modifyQueueShape();
+    // Add other views and actions here----- 
+    private void buildAndStartSentenceGame(String playerName) throws IOException {
+
+        Game sentenceGame = SentenceGameControl.createNewSentenceGame(playerName);
+        CIT360.setCurrentGame(sentenceGame);
+
+        this.console.println("Welcome " + playerName + ".");
+
+        pause(2000);
+        SentenceMainMenuView mainMenu = new SentenceMainMenuView();
+        mainMenu.displayView();
         pause(2000);
     }
+
 }

@@ -10,7 +10,7 @@ package exception;
  * @author Bryan
  */
 public class WordGameException extends Exception {
-    
+
     public WordGameException() {
         // empty constructor
     }

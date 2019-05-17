@@ -5,7 +5,7 @@
  */
 package threadsEtc;
 
-import control.CollectionControl;
+import control.CollectionBuildControl;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -14,26 +14,27 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Bryan
  */
 public class TestRunnables implements Runnable {
+
     // Thread tasks
     private final AtomicInteger atomNum = new AtomicInteger(0);
 
     public AtomicInteger getAtomNum() {
         return atomNum;
     }
-    
+
     ArrayList list = new ArrayList<>();
-    
+
     @Override
     public void run() {
         String name = Thread.currentThread().getName();
-        
-        for (int i : CollectionControl.buildQuantities()) {
+
+        for (int i : CollectionBuildControl.buildQuantities()) {
             atomNum.getAndIncrement();
             System.out.println("Random number: " + (i) + " thread: " + name + " increment: " + atomNum);
         }
 
     }
-    
+
 //    protected void pause(int milliseconds) {
 //        try {
 //            Thread.sleep(3000);

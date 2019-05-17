@@ -5,30 +5,28 @@
  */
 package model;
 
-import java.io.Serializable;
-
 /**
  *
  * @author Bryan
  */
-public class Player implements Serializable {
+public class ObjectNoun {
 
-    private String name;
+    private String object;
 
-    public Player() {
+    public ObjectNoun() {
         // Empty contructor
     }
 
-    public String getName() {
-        return name;
+    public String getObject() {
+        return object;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setObject(String object) {
+        this.object = object;
     }
 
     @Override
     public String toString() {
-        return "Player name is: " + name;
+        return "";
     }
 }

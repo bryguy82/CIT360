@@ -11,24 +11,24 @@ import java.io.Serializable;
  *
  * @author Bryan
  */
-public class Player implements Serializable {
+public class Adverb implements Serializable {
 
-    private String name;
+    private String simpleAdverb;
 
-    public Player() {
+    public Adverb() {
         // Empty contructor
     }
 
-    public String getName() {
-        return name;
+    public String getSimpleAdverb() {
+        return simpleAdverb;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSimpleAdverb(String simpleAdverb) {
+        this.simpleAdverb = simpleAdverb;
     }
 
     @Override
     public String toString() {
-        return "Player name is: " + name;
+        return "";
     }
 }

@@ -12,20 +12,23 @@ import java.io.IOException;
  * @author Bryan
  */
 public class MainMenuView extends ViewStarter {
-    
+
     public MainMenuView() {
         // Empty contructor
     }
-    
+
     @Override
     protected String getMessage() {
-        return "Here is my CIT 360 main menu:\n"
-              + "C - Collections\n"
-              + "T - Threads, Executors, and Runnables\n"
-              + "Q - Quit";
+        return "What would you like to see?\n"
+                + "S - Sentences\n"
+                + "C - Collections\n"
+                + "T - Threads, Executors, and Runnables\n"
+                + "Q - Quit";
     }
+
     /**
      * Get the set of inputs from the user.
+     *
      * @return
      */
     @Override
@@ -42,6 +45,7 @@ public class MainMenuView extends ViewStarter {
 
     /**
      * Perform the action indicated by the user's input.
+     *
      * @param inputs
      * @return true to repeat view, and false to exit to previous view.
      */
@@ -49,6 +53,9 @@ public class MainMenuView extends ViewStarter {
     public boolean doAction(String[] inputs) throws IOException {
 
         switch (inputs[0]) {
+            case "S":
+                showSentences();
+                break;
             case "C":
                 showCollections();
                 break;
@@ -70,16 +77,16 @@ public class MainMenuView extends ViewStarter {
         View collectionView = new CollectionView();
         collectionView.displayView();
     }
+
     private void showThreads() throws IOException {
         pause(2000);
         View threadView = new ThreadView();
         threadView.displayView();
     }
-        
-//    private void startNewGame() throws IOException {
-//        pause(2000);
-//        View newGame = new NewGameView();
-//        newGame.displayView();
-//    }
 
+    private void showSentences() throws IOException {
+        pause(2000);
+        View sentenceView = new StartSentenceView();
+        sentenceView.displayView();
+    }
 }

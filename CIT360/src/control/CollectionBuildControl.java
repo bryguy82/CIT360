@@ -5,7 +5,6 @@
  */
 package control;
 
-
 import java.io.Serializable;
 import java.util.TreeSet;
 import java.util.List;
@@ -22,25 +21,27 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  * @author Bryan
  */
-public class CollectionControl implements Serializable {
+public class CollectionBuildControl implements Serializable {
 
-    public CollectionControl() {
+    public CollectionBuildControl() {
         //Empty constructor
     }
-/*--------------------TREE------------------------------*/
+
+    /*--------------------TREE------------------------------*/
     public static TreeSet<Integer> buildQuantities() {
         // Create quantity tree
         TreeSet<Integer> adjectiveQuantity = new TreeSet<>();
 
         adjectiveQuantity.add(55);
-        
-        for (int i = 0; i < 14; i ++) {
+
+        for (int i = 0; i < 14; i++) {
             adjectiveQuantity.add(ThreadLocalRandom.current().nextInt(0, 70));
         } // An amazing random number generator between values
 
         return adjectiveQuantity;
     }
-/*--------------------LIST------------------------------*/
+
+    /*--------------------LIST------------------------------*/
     public static List<String> buildQualities() {
         // Create quality list
         List<String> adjectiveQuality = new ArrayList<>();
@@ -56,7 +57,8 @@ public class CollectionControl implements Serializable {
 
         return adjectiveQuality;
     }
-/*--------------------SET-------------------------------*/
+
+    /*--------------------SET-------------------------------*/
     public static Set<String> buildSize1() {
         // Create size set 1
         Set<String> adjectiveSize1 = new HashSet<>();
@@ -90,7 +92,8 @@ public class CollectionControl implements Serializable {
 
         return adjectiveSize2;
     }
-/*--------------------QUEUE------------------------------*/
+
+    /*--------------------QUEUE------------------------------*/
     public static Queue<String> buildShapes() {
         // Build a queue of shapes
         Queue<String> adjectiveShape = new LinkedList<>();
@@ -116,7 +119,8 @@ public class CollectionControl implements Serializable {
 
         return adjectiveShape;
     }
-/*--------------------MAP------------------------------*/
+
+    /*--------------------MAP------------------------------*/
     public static Map<Integer, String> buildColor() {
         // Create a map for colors
         Map<Integer, String> adjectiveMap = new HashMap<>();

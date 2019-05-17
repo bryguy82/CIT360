@@ -16,19 +16,21 @@ public class CollectionView extends ViewStarter {
     public CollectionView() {
         // Empty contructor
     }
-    
+
     @Override
     protected String getMessage() {
         return "Which collection would you like to see?\n"
-              + "T - Tree\n"
-              + "L - List\n"
-              + "S - Set\n"
-              + "F - FIFO Queue\n"
-              + "M - Map\n"
-              + "R - Return";
+                + "T - Tree\n"
+                + "L - List\n"
+                + "S - Set\n"
+                + "F - FIFO Queue\n"
+                + "M - Map\n"
+                + "R - Return";
     }
+
     /**
      * Get the set of inputs from the user.
+     *
      * @return
      */
     @Override
@@ -45,6 +47,7 @@ public class CollectionView extends ViewStarter {
 
     /**
      * Perform the action indicated by the user's input.
+     *
      * @param inputs
      * @return true to repeat view, and false to exit to previous view.
      */
@@ -82,21 +85,25 @@ public class CollectionView extends ViewStarter {
         View treeView = new TreeView();
         treeView.displayView();
     }
+
     private void showList() throws IOException {
         pause(2000);
         View listView = new ListView();
         listView.displayView();
     }
+
     private void showSet() throws IOException {
         pause(2000);
         View setView = new SetView();
         setView.displayView();
     }
+
     private void showQueue() throws IOException {
         pause(2000);
         View queueView = new QueueView();
         queueView.displayView();
     }
+
     private void showMap() throws IOException {
         pause(2000);
         View mapView = new MapView();

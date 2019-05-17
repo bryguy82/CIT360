@@ -12,45 +12,45 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import java.util.TreeSet;
-        
+
 /**
  *
  * @author Bryan
  */
-public class WordGameControl implements Serializable {
-    
-    public WordGameControl() {
-        
+public class CollectionManipulateControl implements Serializable {
+
+    public CollectionManipulateControl() {
+
     }
-    
+
     /*
     Manipulate MAP, QUEUE, TREE
-    */
-/*--------------------TREE------------------------------10*/    
+     */
+ /*--------------------TREE------------------------------10*/
     public static TreeSet<Integer> modifyTreeQuantities() {
-        
-        TreeSet<Integer> modifyQuantities = CollectionControl.buildQuantities();
-        
+
+        TreeSet<Integer> modifyQuantities = CollectionBuildControl.buildQuantities();
+
         System.out.println("The tree includes: " + modifyQuantities);
-        
+
         // Remove and add numbers
         modifyQuantities.remove(55);
         modifyQuantities.add(74);
-        
+
         System.out.println("After replacing 55 with 74: " + modifyQuantities);
         System.out.println("There are " + modifyQuantities.size() + " items in this tree.\n");
-        
+
         return modifyQuantities;
     }
-    
 
-/*--------------------LIST-------------------------------7*/
+
+    /*--------------------LIST-------------------------------7*/
     public static List<String> modifyListQualities() {
-        
-        List<String> modifyQuality = CollectionControl.buildQualities();
-        
+
+        List<String> modifyQuality = CollectionBuildControl.buildQualities();
+
         System.out.println("The list of qualities includes: " + modifyQuality);
-        
+
         // Remove from the list
         modifyQuality.remove(2);
         modifyQuality.remove("clever");
@@ -61,73 +61,75 @@ public class WordGameControl implements Serializable {
         modifyQuality.add(1, "honest");
         modifyQuality.add(3, "kind");
         modifyQuality.add(5, "beautiful");
-        
+
         System.out.println("There are " + modifyQuality.size() + " items in this list");
         System.out.println("After adding items in the middle: " + modifyQuality + "\n");
-        
+
         return modifyQuality;
     }
- /*--------------------SET-------------------------------11*/   
+
+    /*--------------------SET-------------------------------11*/
     public static Set<String> modifySetSize() {
-        
-        Set<String> modifySize1 = CollectionControl.buildSize1();
-        Set<String> modifySize2 = CollectionControl.buildSize2();
-        
+
+        Set<String> modifySize1 = CollectionBuildControl.buildSize1();
+        Set<String> modifySize2 = CollectionBuildControl.buildSize2();
+
         System.out.println("Set number one includes: " + modifySize1);
         System.out.println("Set number two includes: " + modifySize2);
-        
+
         // Remove from a list
         modifySize1.remove("little");
         System.out.println("After removing an item from set one " + modifySize1);
-        
+
         // Union (addAll)
         Set<String> unionSet = new HashSet<>(modifySize1);
         unionSet.addAll(modifySize2);
-        
+
         System.out.println("UNION effect on both sets " + unionSet);
         System.out.println("There are " + unionSet.size() + " items in this list.");
-        
+
         // Intersection (retainAll)
         Set<String> intersectionSet = new HashSet<>(modifySize1);
         intersectionSet.retainAll(modifySize2);
-        
+
         System.out.println("INTERSECTION/matching effect on both sets " + intersectionSet);
-        
+
         // Difference (removeAll)
         Set<String> differenceSet = new HashSet<>(modifySize1);
         differenceSet.removeAll(modifySize2);
-        
+
         System.out.println("REMOVAL of matching items (set1-set2) " + differenceSet + "\n");
-        
+
         return modifySize1;
     }
-/*--------------------QUEUE------------------------------15*/
+
+    /*--------------------QUEUE------------------------------15*/
     public static Queue<String> modifyQueueShape() {
-        
-        Queue<String> modifyShape = CollectionControl.buildShapes();
-        
+
+        Queue<String> modifyShape = CollectionBuildControl.buildShapes();
+
         System.out.println("This queue contains: " + modifyShape);
-        
+
         // Remove and add items
         modifyShape.remove();
         modifyShape.remove();
         modifyShape.add("distorted");
         modifyShape.add("flat");
-        
+
         System.out.println("After adding and removing, we have : " + modifyShape);
         System.out.println("The first shape in line is: " + modifyShape.peek()
-                           + "and there are: " + modifyShape.size() + " in queue.\n");
-        
+                + "and there are: " + modifyShape.size() + " in queue.\n");
+
         return modifyShape;
     }
-    
-/*--------------------MAP------------------------------12*/
+
+    /*--------------------MAP------------------------------12*/
     public static Map<Integer, String> modifyMapColor() {
-        
-        Map<Integer, String> modifyColor = CollectionControl.buildColor();
-        
+
+        Map<Integer, String> modifyColor = CollectionBuildControl.buildColor();
+
         System.out.println("The color map contains: " + modifyColor);
-        
+
         // Insert if empty
         modifyColor.putIfAbsent(6, "mustard");
         System.out.println("Insert if empty #6: " + modifyColor);
@@ -149,8 +151,8 @@ public class WordGameControl implements Serializable {
         System.out.println("The value at #4 is " + modifyColor.get(4));
         System.out.println("The completed map has: " + modifyColor);
         System.out.println("There are: " + modifyColor.size() + " colors in the map.\n");
-        
+
         return modifyColor;
     }
-        
+
 }
