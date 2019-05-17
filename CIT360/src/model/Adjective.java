@@ -16,15 +16,13 @@ public class Adjective implements Serializable {
     private String quantity;
     private String quality;
     private String size;
-    //private String age;
     private String shape;
     private String color;
 
-//    public Adjective(String quantity, String quality, String size, String age, String shape, String color) {
+//    public Adjective(String quantity, String quality, String size, String shape, String color) {
 //        setQuantity(quantity);
 //        setQuality(quality);
 //        setSize(size);
-//        setAge(age);
 //        setShape(shape);
 //        setColor(color);
 //    }
@@ -55,14 +53,6 @@ public class Adjective implements Serializable {
     public void setSize(String size) {
         this.size = size;
     }
-
-//    public String getAge() {
-//        return age;
-//    }
-//
-//    public void setAge(String age) {
-//        this.age = age;
-//    }
 
     public String getShape() {
         return shape;
