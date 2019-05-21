@@ -5,19 +5,50 @@
  */
 package control;
 
-import cit360.CIT360;
+//import cit360.CIT360;
 import java.io.Serializable;
 
 /**
  *
  * @author Bryan
  */
-public class VerbControl implements Serializable {
+public class VerbControl implements Serializable, WordSelectorArrayControl {
 
-    public VerbControl() {
-        // Empty contructor
+    public String build(String word, int random, int listSize, Object[] verbPresentArray) {
+        
+        verbPresentArray = WordBankControl.buildVerbPresent().toArray();
+        Object[] verbPastArray = WordBankControl.buildVerbPast().toArray();
+        Object[] verbFutureArray = WordBankControl.buildVerbFuture().toArray();
+        
+        random = (int) Math.round(Math.random() * (30 - 1));
+        listSize = (int) Math.round(Math.random() * (2 - 0));
+        
+        while (random > verbPresentArray.length) {
+            random = random - verbPresentArray.length / 2;
+        }
+        
+        Object[][] verbTenses = new Object[3][verbPresentArray.length];
+        // Populate two dimentional array[tense][word]
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < verbPresentArray.length; j++) {
+                switch (i) {
+                    case 0:
+                        verbTenses[i][j] = verbPresentArray[j].toString();
+                        break;
+                    case 1:
+                        verbTenses[i][j] = verbPastArray[j].toString();
+                        break;
+                    default:
+                        verbTenses[i][j] = verbFutureArray[j].toString();
+                        break;
+                }
+            }
+        }
+        
+        return word = verbTenses[listSize][random].toString();
     }
 
+/*
     public static void VerbSelect(int counter, int list) {
 
         String verb = "";
@@ -49,6 +80,7 @@ public class VerbControl implements Serializable {
 
         verb = verbTenses[list][counter].toString();
 
-        CIT360.getCurrentGame().getWordBank().setVerb(verb);
+        //CIT360.getCurrentGame().getWordBank().setVerb(verb);
     }
+    */
 }

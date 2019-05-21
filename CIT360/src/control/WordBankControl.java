@@ -224,10 +224,17 @@ public class WordBankControl implements Serializable {
         // Create quantity tree
         TreeSet<Integer> addQuantity = new TreeSet<>();
 
+        int min = 2;
+        int max = 50;
+        
+        for (int i = 0; i < 21; i++) {
+            addQuantity.add((int) (Math.random() * (max - min) + 1));
+        }
+/*
         for (int i = 0; i < 21; i++) {
             addQuantity.add(ThreadLocalRandom.current().nextInt(2, 70));
         } // An amazing random number generator between values
-
+*/
         return addQuantity;
     }
 

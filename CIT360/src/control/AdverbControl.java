@@ -6,29 +6,39 @@
 package control;
 
 import java.io.Serializable;
-import cit360.CIT360;
+//import cit360.CIT360;
 
 /**
  *
  * @author Bryan
  */
-public class AdverbControl implements Serializable {
+public class AdverbControl implements Serializable, WordSelectorControl {
 
-    public AdverbControl() {
-        // Empty contructor
-    }
-
-    public static void adverbSelect(int counter) {
-
-        String adverb = "";
-        Object[] adverbArray = WordBankControl.buildAdverbTree().toArray();
-
-        while (counter > adverbArray.length) {
-            counter = counter - adverbArray.length / 2;
+    public String build(String word, int a, Object[] adverbArray){
+        
+        adverbArray = WordBankControl.buildAdverbTree().toArray();
+        a = (int) Math.round(Math.random() * (30 - 1));
+        
+        while (a > adverbArray.length) {
+            a = a - adverbArray.length / 2;
         }
 
-        adverb = adverbArray[counter].toString();
-
-        CIT360.getCurrentGame().getWordBank().setAdverb(adverb);
+        word = adverbArray[a].toString();
+        
+        return word;
     }
+
+//    public static void adverbSelect(int counter) {
+//
+//        String adverb = "";
+//        Object[] adverbArray = WordBankControl.buildAdverbTree().toArray();
+//
+//        while (counter > adverbArray.length) {
+//            counter = counter - adverbArray.length / 2;
+//        }
+//
+//        adverb = adverbArray[counter].toString();
+//
+//        CIT360.getCurrentGame().getWordBank().setAdverb(adverb);
+//    }
 }

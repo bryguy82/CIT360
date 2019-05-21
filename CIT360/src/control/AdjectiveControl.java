@@ -6,18 +6,68 @@
 package control;
 
 import java.io.Serializable;
-import model.Adjective;
+//import model.Adjective;
 
 /**
  *
  * @author Bryan
  */
-public class AdjectiveControl implements Serializable {
+public class AdjectiveControl implements Serializable, WordSelectorArrayControl {
 
-    public AdjectiveControl() {
-        // Empty Contructor
+    @Override
+    public String build(String word, int random, int listSize, Object[] adjectiveQuantityTree) {
+        
+        String adjectiveQuantity;
+        String adjectiveQuality;
+        String adjectiveSize;
+        String adjectiveShape;
+        String adjectiveColor;
+        
+        adjectiveQuantityTree = WordBankControl.buildAdjectiveQuantity().toArray();
+        Object[] adjectiveQualityTree = WordBankControl.buildAdjectiveQuality().toArray();
+        Object[] adjectiveSizeTree = WordBankControl.buildAdjectiveSize().toArray();
+        Object[] adjectiveShapeTree = WordBankControl.buildAdjectiveShape().toArray();
+        Object[] adjectiveColorTree = WordBankControl.buildAdjectiveColor().toArray();
+        
+        random = (int) Math.round(Math.random() * (30 - 1));
+        listSize = (int) Math.round(Math.random() * (4 - 0));
+        
+        while (random > adjectiveQuantityTree.length) {
+            random = random - adjectiveQuantityTree.length / 2;
+        }
+        
+        Object[][] adjectiveOrder = buildTwoDimentionalArray(adjectiveQuantityTree, adjectiveQualityTree,
+                adjectiveSizeTree, adjectiveShapeTree, adjectiveColorTree);
+        
+        for (int i = 0; i < 5; i++) {
+            switch (i) {
+                case 0:
+                    adjectiveQuantity = adjectiveOrder[i][random].toString();
+                    word = adjectiveQuantity + " ";
+                    break;
+                case 1:
+                    adjectiveQuality = adjectiveOrder[i][random].toString();
+                    word = word + adjectiveQuality + " ";
+                    break;
+                case 2:
+                    adjectiveSize = adjectiveOrder[i][random].toString();
+                    word = word + adjectiveSize + " ";
+                    break;
+                case 3:
+                    adjectiveShape = adjectiveOrder[i][random].toString();
+                    word = word + adjectiveShape + " ";
+                    break;
+                default:
+                    adjectiveColor = adjectiveOrder[i][random].toString();
+                    word = word + adjectiveColor;
+                    break;
+            }
+        }
+        
+        return word;
     }
 
+/*
     public static void AdjectiveSelect(int counter, int list) {
 
         String adjectiveQuantity = "";
@@ -70,8 +120,9 @@ public class AdjectiveControl implements Serializable {
         adjective.setColor(adjectiveColor);
 
         //word.setAdjective(adjective);
-        cit360.CIT360.getCurrentGame().getWordBank().setAdjective(adjective);
+//        cit360.CIT360.getCurrentGame().getWordBank().setAdjective(adjective);
     }
+*/
 
     private static Object[][] buildTwoDimentionalArray(Object[] a, Object[] b, Object[] c, Object[] d, Object[] e) {
 
