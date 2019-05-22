@@ -13,16 +13,16 @@ import java.io.Serializable;
  * @author Bryan
  */
 public class PersonNounControl implements Serializable, WordSelectorControl {
-    
+
     public String build(String word, int a, Object[] personArray) {
-        
+
         personArray = WordBankControl.buildNounPersonQuantity().toArray();
         a = (int) Math.round(Math.random() * (30 - 1));
-        
-        while (a > personArray.length) {
-            a = a - personArray.length / 2;
+
+        while (a > personArray.length - 1) {
+            a = a - personArray.length;
         }
-        
+
         return word = personArray[a].toString();
     }
 

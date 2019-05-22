@@ -5,7 +5,7 @@
  */
 package control;
 
-import cit360.CIT360;
+//import cit360.CIT360;
 import java.util.HashMap;
 //import java.util.concurrent.ThreadLocalRandom;
 import model.Game;
@@ -44,23 +44,23 @@ public class SentenceGameControl {
         String verb = "";
         String adjective = "";
         String object = "";
-        
+
         // Save the random different parts of speech to the game's wordBank
         HashMap<String, WordSelectorControl> wordLists = new HashMap<>();
         wordLists.put("person", new PersonNounControl());
         wordLists.put("adverb", new AdverbControl());
         wordLists.put("object", new ObjectNounControl());
-        
+
         HashMap<String, WordSelectorArrayControl> wordArrayLists = new HashMap<>();
         wordArrayLists.put("verb", new VerbControl());
         wordArrayLists.put("adjective", new AdjectiveControl());
-        
+
         String[] partsOfSpeech = {"person", "adverb", "verb", "adjective", "object"};
-        
+
         WordSelectorControl wordSelect;
         WordSelectorArrayControl wordSelectArray;
         // for loop with OR for both maps, then case statements
-        for (int i = 0; i < wordLists.size() + wordArrayLists.size(); i ++) {
+        for (int i = 0; i < wordLists.size() + wordArrayLists.size(); i++) {
             switch ((partsOfSpeech[i])) {
                 case "person":
                     wordSelect = wordLists.get(partsOfSpeech[i]);
@@ -84,26 +84,24 @@ public class SentenceGameControl {
                     break;
             }
         }
-        
+
         String sentence = "The " + person + " " + adverb + " " + verb + " the " + adjective + " " + object + "s.";
         //game.setTheSentence(sentence);
 
         return sentence;
-        
-        //Game game = CIT360.getCurrentGame();
 
+        //Game game = CIT360.getCurrentGame();
         // random numbers to select which words to use
 //        int random = (int) (Math.random() * (30 - 1)); // ThreadLocalRandom.current().nextInt(1, 30);
 //        int verbList = (int) (Math.random() * (2 - 0)); // ThreadLocalRandom.current().nextInt(0, 2);
 //        int adjectiveList = (int) (Math.random() * (4 - 0)); // ThreadLocalRandom.current().nextInt(0, 4);
-
 //        PersonNounControl.personNounSelect(random);
 //        AdverbControl.adverbSelect(random);
 //        VerbControl.VerbSelect(random, verbList);
 //        AdjectiveControl.AdjectiveSelect(random, adjectiveList);
 //        ObjectNounControl.objectNounSelect(random);
 
-/*
+        /*
         WordBank wordBank = game.getWordBank();
         // Call individual controls to build a random sentence
         String personNoun = wordBank.getPersonNoun();
@@ -120,6 +118,6 @@ public class SentenceGameControl {
         //game.setTheSentence(sentence);
 
         return sentence;
-*/
+         */
     }
 }

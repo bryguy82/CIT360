@@ -14,17 +14,17 @@ import java.io.Serializable;
  */
 public class ObjectNounControl implements Serializable, WordSelectorControl {
 
-    public String build(String word, int a, Object[] objectArray){
-        
+    public String build(String word, int a, Object[] objectArray) {
+
         objectArray = WordBankControl.buildNounObjectQuantity().toArray();
         a = (int) Math.round(Math.random() * (30 - 1));
-        
-        while (a > objectArray.length) {
-            a = a - objectArray.length / 2;
+
+        while (a > objectArray.length - 1) {
+            a = a - objectArray.length;
         }
 
         word = objectArray[a].toString();
-        
+
         return word;
     }
 

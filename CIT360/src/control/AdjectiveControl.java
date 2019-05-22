@@ -16,29 +16,29 @@ public class AdjectiveControl implements Serializable, WordSelectorArrayControl 
 
     @Override
     public String build(String word, int random, int listSize, Object[] adjectiveQuantityTree) {
-        
+
         String adjectiveQuantity;
         String adjectiveQuality;
         String adjectiveSize;
         String adjectiveShape;
         String adjectiveColor;
-        
+
         adjectiveQuantityTree = WordBankControl.buildAdjectiveQuantity().toArray();
         Object[] adjectiveQualityTree = WordBankControl.buildAdjectiveQuality().toArray();
         Object[] adjectiveSizeTree = WordBankControl.buildAdjectiveSize().toArray();
         Object[] adjectiveShapeTree = WordBankControl.buildAdjectiveShape().toArray();
         Object[] adjectiveColorTree = WordBankControl.buildAdjectiveColor().toArray();
-        
+
         random = (int) Math.round(Math.random() * (30 - 1));
         listSize = (int) Math.round(Math.random() * (4 - 0));
-        
-        while (random > adjectiveQuantityTree.length) {
-            random = random - adjectiveQuantityTree.length / 2;
+
+        while (random > adjectiveQuantityTree.length - 1) {
+            random = random - adjectiveQuantityTree.length;
         }
-        
+
         Object[][] adjectiveOrder = buildTwoDimentionalArray(adjectiveQuantityTree, adjectiveQualityTree,
                 adjectiveSizeTree, adjectiveShapeTree, adjectiveColorTree);
-        
+
         for (int i = 0; i < 5; i++) {
             switch (i) {
                 case 0:
@@ -63,11 +63,11 @@ public class AdjectiveControl implements Serializable, WordSelectorArrayControl 
                     break;
             }
         }
-        
+
         return word;
     }
 
-/*
+    /*
     public static void AdjectiveSelect(int counter, int list) {
 
         String adjectiveQuantity = "";
@@ -122,8 +122,7 @@ public class AdjectiveControl implements Serializable, WordSelectorArrayControl 
         //word.setAdjective(adjective);
 //        cit360.CIT360.getCurrentGame().getWordBank().setAdjective(adjective);
     }
-*/
-
+     */
     private static Object[][] buildTwoDimentionalArray(Object[] a, Object[] b, Object[] c, Object[] d, Object[] e) {
 
         Object[][] adjectiveOrder = new Object[5][a.length];

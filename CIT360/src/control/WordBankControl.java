@@ -7,7 +7,7 @@ package control;
 
 import java.io.Serializable;
 import java.util.TreeSet;
-import java.util.concurrent.ThreadLocalRandom;
+//import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
@@ -226,15 +226,15 @@ public class WordBankControl implements Serializable {
 
         int min = 2;
         int max = 50;
-        
+
         for (int i = 0; i < 21; i++) {
             addQuantity.add((int) (Math.random() * (max - min) + 1));
         }
-/*
+        /*
         for (int i = 0; i < 21; i++) {
             addQuantity.add(ThreadLocalRandom.current().nextInt(2, 70));
         } // An amazing random number generator between values
-*/
+         */
         return addQuantity;
     }
 

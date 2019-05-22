@@ -10,7 +10,7 @@ package control;
  * @author Bryan
  */
 public interface WordSelectorControl {
-    
+
     String build(String type, int a, Object[] speechPart);
- 
+
 }

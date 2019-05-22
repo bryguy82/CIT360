@@ -15,18 +15,18 @@ import java.io.Serializable;
 public class VerbControl implements Serializable, WordSelectorArrayControl {
 
     public String build(String word, int random, int listSize, Object[] verbPresentArray) {
-        
+
         verbPresentArray = WordBankControl.buildVerbPresent().toArray();
         Object[] verbPastArray = WordBankControl.buildVerbPast().toArray();
         Object[] verbFutureArray = WordBankControl.buildVerbFuture().toArray();
-        
+
         random = (int) Math.round(Math.random() * (30 - 1));
         listSize = (int) Math.round(Math.random() * (2 - 0));
-        
-        while (random > verbPresentArray.length) {
-            random = random - verbPresentArray.length / 2;
+
+        while (random > verbPresentArray.length - 1) {
+            random = random - verbPresentArray.length;
         }
-        
+
         Object[][] verbTenses = new Object[3][verbPresentArray.length];
         // Populate two dimentional array[tense][word]
         for (int i = 0; i < 3; i++) {
@@ -44,11 +44,11 @@ public class VerbControl implements Serializable, WordSelectorArrayControl {
                 }
             }
         }
-        
+
         return word = verbTenses[listSize][random].toString();
     }
 
-/*
+    /*
     public static void VerbSelect(int counter, int list) {
 
         String verb = "";
@@ -82,5 +82,5 @@ public class VerbControl implements Serializable, WordSelectorArrayControl {
 
         //CIT360.getCurrentGame().getWordBank().setVerb(verb);
     }
-    */
+     */
 }

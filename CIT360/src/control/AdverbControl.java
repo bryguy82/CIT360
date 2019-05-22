@@ -14,17 +14,17 @@ import java.io.Serializable;
  */
 public class AdverbControl implements Serializable, WordSelectorControl {
 
-    public String build(String word, int a, Object[] adverbArray){
-        
+    public String build(String word, int a, Object[] adverbArray) {
+
         adverbArray = WordBankControl.buildAdverbTree().toArray();
         a = (int) Math.round(Math.random() * (30 - 1));
-        
-        while (a > adverbArray.length) {
-            a = a - adverbArray.length / 2;
+
+        while (a > adverbArray.length - 1) {
+            a = a - adverbArray.length;
         }
 
         word = adverbArray[a].toString();
-        
+
         return word;
     }
 

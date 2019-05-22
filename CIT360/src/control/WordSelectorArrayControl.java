@@ -10,7 +10,7 @@ package control;
  * @author Bryan
  */
 public interface WordSelectorArrayControl {
-    
+
     String build(String type, int a, int b, Object[] partsOfSpeechArray);
 
 }

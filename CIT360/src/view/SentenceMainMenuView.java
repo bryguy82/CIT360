@@ -68,13 +68,13 @@ class SentenceMainMenuView extends ViewStarter {
 
     //Other actions go after this-----
     private void showSentence() throws ArrayIndexOutOfBoundsException {
-        
-        try {
-        // Call a function in the SentenceGameControl class
-        String sentenceToShow = SentenceGameControl.makeASentence();
 
-        this.console.println(sentenceToShow);
-        pause(3000);
+        try {
+            // Call a function in the SentenceGameControl class
+            String sentenceToShow = SentenceGameControl.makeASentence();
+
+            this.console.println(sentenceToShow);
+            pause(3000);
         } catch (ArrayIndexOutOfBoundsException aioobe) {
             ErrorView.display(this.getClass().getName(), aioobe.getMessage());
         }

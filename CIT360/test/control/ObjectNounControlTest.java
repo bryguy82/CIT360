@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author Bryan
  */
 public class ObjectNounControlTest {
-    
+
     public ObjectNounControlTest() {
     }
 
@@ -28,5 +28,5 @@ public class ObjectNounControlTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
