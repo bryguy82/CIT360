@@ -5,7 +5,7 @@
  */
 package threadsEtc;
 
-import control.CollectionBuildControl;
+import collection.CollectionBuildControl;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 

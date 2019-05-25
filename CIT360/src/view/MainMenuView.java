@@ -23,6 +23,7 @@ public class MainMenuView extends ViewStarter {
                 + "S - Sentences\n"
                 + "C - Collections\n"
                 + "T - Threads, Executors, and Runnables\n"
+                + "J - JSON\n"
                 + "Q - Quit";
     }
 
@@ -62,6 +63,9 @@ public class MainMenuView extends ViewStarter {
             case "T":
                 showThreads();
                 break;
+            case "J":
+                showJSON();
+                break;
             case "Q":
                 this.console.println("Thank you for coming. Come back soon!");
                 return false;
@@ -72,6 +76,12 @@ public class MainMenuView extends ViewStarter {
     }
 
     // Add other views here----- 
+    private void showSentences() throws IOException {
+        pause(2000);
+        View sentenceView = new StartSentenceView();
+        sentenceView.displayView();
+    }
+
     private void showCollections() throws IOException {
         pause(2000);
         View collectionView = new CollectionView();
@@ -84,9 +94,10 @@ public class MainMenuView extends ViewStarter {
         threadView.displayView();
     }
 
-    private void showSentences() throws IOException {
+    private void showJSON() throws IOException {
         pause(2000);
-        View sentenceView = new StartSentenceView();
-        sentenceView.displayView();
+        View jsonView = new JsonView();
+        jsonView.displayView();
     }
+
 }

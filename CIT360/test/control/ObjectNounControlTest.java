@@ -24,7 +24,7 @@ public class ObjectNounControlTest {
     public void testObjectNounSelect() {
         System.out.println("objectNounSelect");
         int counter = 0;
-        ObjectNounControl.objectNounSelect(counter);
+        //ObjectNounControl.build(counter);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

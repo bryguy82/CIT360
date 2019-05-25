@@ -5,7 +5,7 @@
  */
 package view;
 
-import control.CollectionManipulateControl;
+import collection.CollectionManipulateControl;
 import java.io.IOException;
 
 /**

@@ -5,23 +5,27 @@
  */
 package view;
 
-import collection.CollectionManipulateControl;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import json.JsonCodeExample;
+import org.json.simple.parser.ParseException;
 
 /**
  *
  * @author Bryan
  */
-public class TreeView extends ViewStarter {
+public class JsonView extends ViewStarter {
 
-    public TreeView() {
-        //Empty contructor
+    public JsonView() {
+        // Empty constructor
     }
 
     @Override
     protected String getMessage() {
-        return "Press D to display or R to return\n"
-                + "D - Display\n"
+        return "You have one option to choose from:\n"
+                + "J - JSON example\n"
                 + "R - Return";
     }
 
@@ -52,9 +56,15 @@ public class TreeView extends ViewStarter {
     public boolean doAction(String[] inputs) throws IOException {
 
         switch (inputs[0]) {
-            case "D": // Tree
-                showTree();
-                return false;
+            case "J":
+                try {
+                    showJson();
+                } catch (FileNotFoundException fnfex) {
+                    ErrorView.display(this.getClass().getName(), fnfex.getMessage());
+                } catch (ParseException | NullPointerException | IOException ex) {
+                    ErrorView.display(this.getClass().getName(), ex.getMessage());
+                }
+                break;
             case "R":
                 return false;
             default:
@@ -63,9 +73,11 @@ public class TreeView extends ViewStarter {
         return true;
     }
 
-    // Add other views here----- 
-    private void showTree() throws IOException {
-        CollectionManipulateControl.modifyTreeQuantities();
+    // Add other programs here----- 
+    private void showJson() throws ParseException, IOException, FileNotFoundException, NullPointerException {
+        JsonCodeExample jsonExample = new JsonCodeExample();
+        jsonExample.jsonFunction();
         pause(2000);
     }
+
 }
