@@ -31,14 +31,15 @@ public class SentenceGameControl {
 
         player.setName(playerName);
         game.setThePlayer(player);
-        game.setTheSentence(sentence);
         game.setWordBank(wordBank);
+        game.setTheSentence(sentence);
 
         return game;
     }
 
     public static String makeASentence() {
 
+        // Game object with each individual string
         String person = "";
         String adverb = "";
         String verb = "";
@@ -57,6 +58,7 @@ public class SentenceGameControl {
 
         String[] partsOfSpeech = {"person", "adverb", "verb", "adjective", "object"};
 
+        int random = (int) Math.round(Math.random() * (30 - 1));
         WordSelectorControl wordSelect;
         WordSelectorArrayControl wordSelectArray;
         // for loop with OR for both maps, then case statements
@@ -64,23 +66,23 @@ public class SentenceGameControl {
             switch ((partsOfSpeech[i])) {
                 case "person":
                     wordSelect = wordLists.get(partsOfSpeech[i]);
-                    person = wordSelect.build(person, i, partsOfSpeech);
+                    person = wordSelect.build(person, random, partsOfSpeech);
                     break;
                 case "adverb":
                     wordSelect = wordLists.get(partsOfSpeech[i]);
-                    adverb = wordSelect.build(adverb, i, partsOfSpeech);
+                    adverb = wordSelect.build(adverb, random, partsOfSpeech);
                     break;
                 case "verb":
                     wordSelectArray = wordArrayLists.get(partsOfSpeech[i]);
-                    verb = wordSelectArray.build(verb, i, i, partsOfSpeech);
+                    verb = wordSelectArray.build(verb, random, i, partsOfSpeech);
                     break;
                 case "adjective":
                     wordSelectArray = wordArrayLists.get(partsOfSpeech[i]);
-                    adjective = wordSelectArray.build(verb, i, i, partsOfSpeech);
+                    adjective = wordSelectArray.build(adjective, random, i, partsOfSpeech);
                     break;
                 default:
                     wordSelect = wordLists.get(partsOfSpeech[i]);
-                    object = wordSelect.build(object, i, partsOfSpeech);
+                    object = wordSelect.build(object, random, partsOfSpeech);
                     break;
             }
         }

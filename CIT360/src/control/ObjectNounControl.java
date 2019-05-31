@@ -14,16 +14,24 @@ import java.io.Serializable;
  */
 public class ObjectNounControl implements Serializable, WordSelectorControl {
 
-    public String build(String word, int a, Object[] objectArray) {
+    public String build(String word, int selection, Object[] objectArray) {
 
         objectArray = WordBankControl.buildNounObjectQuantity().toArray();
-        a = (int) Math.round(Math.random() * (30 - 1));
+        //selection = (int) Math.round(Math.random() * (30 - 1));
 
-        while (a > objectArray.length - 1) {
-            a = a - objectArray.length;
+        if (selection < 0) {
+            throw new ArrayIndexOutOfBoundsException("Number selected was less than zero.");
+            //return -1
+        }
+        while (selection > objectArray.length - 1) {
+            if (selection > 20) {
+                throw new ArrayIndexOutOfBoundsException("Number selected was greater than twenty.");
+                //return -2
+            }
+            selection = selection - objectArray.length;
         }
 
-        word = objectArray[a].toString();
+        word = objectArray[selection].toString();
 
         return word;
     }

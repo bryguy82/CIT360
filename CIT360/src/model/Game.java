@@ -17,6 +17,11 @@ public class Game implements Serializable {
     private Player thePlayer;
     private WordBank wordBank;
     private String theSentence;
+    private String person;
+    private String adverb;
+    private String verb;
+    private String adjective;
+    private String object;
 
     public Game() {
         // Empty constructor        
@@ -52,6 +57,46 @@ public class Game implements Serializable {
 
     public void setTheSentence(String theSentence) {
         this.theSentence = theSentence;
+    }
+
+    public String getPerson() {
+        return person;
+    }
+
+    public void setPerson(String person) {
+        this.person = person;
+    }
+
+    public String getAdverb() {
+        return adverb;
+    }
+
+    public void setAdverb(String adverb) {
+        this.adverb = adverb;
+    }
+
+    public String getVerb() {
+        return verb;
+    }
+
+    public void setVerb(String verb) {
+        this.verb = verb;
+    }
+
+    public String getAdjective() {
+        return adjective;
+    }
+
+    public void setAdjective(String adjective) {
+        this.adjective = adjective;
+    }
+
+    public String getObject() {
+        return object;
+    }
+
+    public void setObject(String object) {
+        this.object = object;
     }
 
     @Override

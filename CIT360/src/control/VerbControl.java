@@ -14,17 +14,25 @@ import java.io.Serializable;
  */
 public class VerbControl implements Serializable, WordSelectorArrayControl {
 
-    public String build(String word, int random, int listSize, Object[] verbPresentArray) {
+    public String build(String word, int selection, int listSize, Object[] verbPresentArray) {
 
         verbPresentArray = WordBankControl.buildVerbPresent().toArray();
         Object[] verbPastArray = WordBankControl.buildVerbPast().toArray();
         Object[] verbFutureArray = WordBankControl.buildVerbFuture().toArray();
 
-        random = (int) Math.round(Math.random() * (30 - 1));
+        //selection = (int) Math.round(Math.random() * (30 - 1));
         listSize = (int) Math.round(Math.random() * (2 - 0));
 
-        while (random > verbPresentArray.length - 1) {
-            random = random - verbPresentArray.length;
+        if (selection < 0) {
+            throw new ArrayIndexOutOfBoundsException("Number selected was less than zero.");
+            //return -1
+        }
+        while (selection > verbPresentArray.length - 1) {
+            if (selection > 20) {
+                throw new ArrayIndexOutOfBoundsException("Number selected was greater than twenty.");
+                //return -2
+            }
+            selection = selection - verbPresentArray.length;
         }
 
         Object[][] verbTenses = new Object[3][verbPresentArray.length];
@@ -45,7 +53,7 @@ public class VerbControl implements Serializable, WordSelectorArrayControl {
             }
         }
 
-        return word = verbTenses[listSize][random].toString();
+        return word = verbTenses[listSize][selection].toString();
     }
 
     /*

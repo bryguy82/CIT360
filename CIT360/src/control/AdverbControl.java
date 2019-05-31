@@ -14,16 +14,24 @@ import java.io.Serializable;
  */
 public class AdverbControl implements Serializable, WordSelectorControl {
 
-    public String build(String word, int a, Object[] adverbArray) {
+    public String build(String word, int selection, Object[] adverbArray) {
 
         adverbArray = WordBankControl.buildAdverbTree().toArray();
-        a = (int) Math.round(Math.random() * (30 - 1));
+        //selection = (int) Math.round(Math.random() * (30 - 1));
 
-        while (a > adverbArray.length - 1) {
-            a = a - adverbArray.length;
+        if (selection < 0) {
+            throw new ArrayIndexOutOfBoundsException("Number selected was less than zero.");
+            //return -1
+        }
+        while (selection > adverbArray.length - 1) {
+            if (selection > 20) {
+                throw new ArrayIndexOutOfBoundsException("Number selected was greater than twenty.");
+                //return -2
+            }
+            selection = selection - adverbArray.length;
         }
 
-        word = adverbArray[a].toString();
+        word = adverbArray[selection].toString();
 
         return word;
     }

@@ -24,8 +24,7 @@ public class ErrorView extends ViewStarter {
     public static void display(String className, String errorMessage) {
         console.println("\n-----------------ERROR-------------"
                 + "\n" + errorMessage
-                + "\n-----------------------------------"
-                + "\n----------Excuse the dust----------");
+                + "\n-----------------------------------");
         //log.printf("%n%n%s", className + " - " + errorMessage);
     }
 

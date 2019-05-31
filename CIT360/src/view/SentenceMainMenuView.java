@@ -21,7 +21,8 @@ class SentenceMainMenuView extends ViewStarter {
     @Override
     protected String getMessage() {
         return "Here we are at the Main Menu.\n\n"
-                + "C - Crazy Sentence\n"
+                + "R - Random Sentence\n"
+                + "C - Custom sentence\n"
                 + "Q - Quit Game.\n";
     }
 
@@ -54,8 +55,11 @@ class SentenceMainMenuView extends ViewStarter {
     public boolean doAction(String[] inputs) throws IOException {
 
         switch (inputs[0]) {
+            case "R":
+                showRandomSentence();
+                break;
             case "C":
-                showSentence();
+                showCustomSentence();
                 break;
             case "Q":
                 this.console.println("Thank you for playing. Come back soon!");
@@ -67,7 +71,7 @@ class SentenceMainMenuView extends ViewStarter {
     }
 
     //Other actions go after this-----
-    private void showSentence() throws ArrayIndexOutOfBoundsException {
+    private void showRandomSentence() throws ArrayIndexOutOfBoundsException {
 
         try {
             // Call a function in the SentenceGameControl class
@@ -78,5 +82,11 @@ class SentenceMainMenuView extends ViewStarter {
         } catch (ArrayIndexOutOfBoundsException aioobe) {
             ErrorView.display(this.getClass().getName(), aioobe.getMessage());
         }
+    }
+    
+    private void showCustomSentence() throws ArrayIndexOutOfBoundsException, IOException {
+        pause(2000);
+        View customSentence = new SentenceCustomView();
+        customSentence.displayView();
     }
 }
