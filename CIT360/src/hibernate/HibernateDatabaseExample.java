@@ -35,7 +35,7 @@ public class HibernateDatabaseExample {
         cfg.addAnnotatedClass(Subscriber.class);
         
         try {
-            factory = cfg.addAnnotatedClass(Subscriber.class).buildSessionFactory();
+            factory = cfg.buildSessionFactory();
                     
         } catch(Throwable ex) {
             ErrorView.display(this.getClass().getName(), ex.getMessage());

@@ -69,11 +69,4 @@ public class HibernateView extends ViewStarter {
         //hibernate.hibernateExample();
         pause(2000);
     }
-    
-//    private void showJson() throws ParseException, IOException, FileNotFoundException, NullPointerException {
-//        JsonCodeExample jsonExample = new JsonCodeExample();
-//        jsonExample.jsonFunction();
-//        pause(2000);
-//    }
-
 }
