@@ -15,6 +15,17 @@ import javax.persistence.*;
 @Table
 public class Subscriber {
 
+    public Subscriber() {
+        
+    }
+    
+    public Subscriber(int subscriberKey, String lastName, String firstName, String city){
+        this.subscriberKey = subscriberKey;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.city = city;
+    }
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subscriberKey")

@@ -7,12 +7,16 @@ package hibernate;
 
 import java.util.Iterator;
 import java.util.List;
+import javax.imageio.spi.ServiceRegistry;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import view.ErrorView;
+
+
 /**
  *
  * @author Bryan
@@ -20,30 +24,31 @@ import view.ErrorView;
 public class HibernateDatabaseExample {
 
     public static SessionFactory factory;
-    
+ 
     public HibernateDatabaseExample() {
         // Empty constructor
     }
         
     public void hibernateExample() {
+        
+        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
+        cfg.addAnnotatedClass(Subscriber.class);
+        
+        try {
+            factory = cfg.addAnnotatedClass(Subscriber.class).buildSessionFactory();
+                    
+        } catch(Throwable ex) {
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
+            System.out.println("Failed to start session.");
+        }
 
-    try {
-        factory = new Configuration()
-                .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Subscriber.class)
-                .buildSessionFactory();
-    } catch(Throwable ex) {
-        ErrorView.display(this.getClass().getName(), ex.getMessage());
-        System.out.println("Failed to start session.");
-    }
-    
-    showSubscribers();
-    
-    factory.close();
+        showSubscribers();
+
+        factory.close();
     }
     
     
-    /* Method to  READ all the employees */
+    /* Method to  READ all the subscribers */
    public void showSubscribers( ){
       Session session = factory.openSession();
       Transaction transaction = null;
