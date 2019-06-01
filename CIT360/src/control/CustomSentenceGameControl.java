@@ -14,15 +14,15 @@ import model.Game;
  * @author Bryan
  */
 public class CustomSentenceGameControl {
-    
+
     public CustomSentenceGameControl() {
-        
+
     }
-    
+
     public void buildsCustomSentence(String[] inputs) {
-        
+
         Game game = CIT360.getCurrentGame();
-        
+
         String person = "";
         String adverb = "";
         String verb = "";
@@ -46,7 +46,7 @@ public class CustomSentenceGameControl {
         int verbSelected = Integer.parseInt(inputs[2]);
         int adjectiveSelected = Integer.parseInt(inputs[3]);
         int objectSelected = Integer.parseInt(inputs[4]);
-        
+
         WordSelectorControl wordSelect;
         WordSelectorArrayControl wordSelectArray;
         // for loop with OR for both maps, then case statements

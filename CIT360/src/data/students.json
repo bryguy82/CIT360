@@ -1,4 +1,16 @@
 [
-    {"firstName":"Michael","lastName":"Douglas","favorite color":"black"}
-    ,{"firstName":"John","lastName":"Smith","favorite color":"red"}
-    ,{"firstName":"Sarah","lastName":"Johnson","favorite color":"purple"}]
+    {
+        "firstName": "Michael",
+        "lastName": "Douglas",
+        "favorite color": "black"
+    }
+    , {
+        "firstName": "John",
+        "lastName": "Smith",
+        "favorite color": "red"
+    }
+    , {
+        "firstName": "Sarah",
+        "lastName": "Johnson",
+        "favorite color": "purple"
+    }]

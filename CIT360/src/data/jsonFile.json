@@ -2,37 +2,87 @@
     "words": [
         {
             "personNouns": [
-                {"person" : "brother"},
-                {"person" : "sister"},
-                {"person" : "sibling"},
-                {"person" : "mother"},
-                {"person" : "father"},
-                {"person" : "grandfather"},
-                {"person" : "grandmother"},
-                {"person" : "aunt"}]
+                {
+                    "person": "brother"
+                },
+                {
+                    "person": "sister"
+                },
+                {
+                    "person": "sibling"
+                },
+                {
+                    "person": "mother"
+                },
+                {
+                    "person": "father"
+                },
+                {
+                    "person": "grandfather"
+                },
+                {
+                    "person": "grandmother"
+                },
+                {
+                    "person": "aunt"
+                }]
         },
         {
             "objectNouns": [
-                {"object" : "ball"},
-                {"object" : "backpack"},
-                {"object" : "sofa"},
-                {"object" : "calendar"},
-                {"object" : "computer"},
-                {"object" : "mirror"},
-                {"object" : "clock"},
-                {"object" : "pencil"},
-                {"object" : "pen"}]
+                {
+                    "object": "ball"
+                },
+                {
+                    "object": "backpack"
+                },
+                {
+                    "object": "sofa"
+                },
+                {
+                    "object": "calendar"
+                },
+                {
+                    "object": "computer"
+                },
+                {
+                    "object": "mirror"
+                },
+                {
+                    "object": "clock"
+                },
+                {
+                    "object": "pencil"
+                },
+                {
+                    "object": "pen"
+                }]
         },
         {
-            "verbs" : [
-                {"present" : "takes"},
-                {"present" : "sees"},
-                {"present" : "opens"},
-                {"present" : "closes"},
-                {"present" : "drives"},
-                {"present" : "walks"},
-                {"present" : "uses"},
-                {"present" : "finds"}]
+            "verbs": [
+                {
+                    "present": "takes"
+                },
+                {
+                    "present": "sees"
+                },
+                {
+                    "present": "opens"
+                },
+                {
+                    "present": "closes"
+                },
+                {
+                    "present": "drives"
+                },
+                {
+                    "present": "walks"
+                },
+                {
+                    "present": "uses"
+                },
+                {
+                    "present": "finds"
+                }]
         }
     ]
 }

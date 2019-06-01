@@ -83,7 +83,7 @@ class SentenceMainMenuView extends ViewStarter {
             ErrorView.display(this.getClass().getName(), aioobe.getMessage());
         }
     }
-    
+
     private void showCustomSentence() throws ArrayIndexOutOfBoundsException, IOException {
         pause(2000);
         View customSentence = new SentenceCustomView();

@@ -7,7 +7,6 @@ package view;
 
 import cit360.CIT360;
 import control.CustomSentenceGameControl;
-import control.SentenceGameControl;
 import java.io.IOException;
 import model.Game;
 
@@ -61,34 +60,31 @@ public class SentenceCustomView extends ViewStarter {
         //call the programs to set up the sentence
         try {
             customSentence(inputs);
-        } catch(NumberFormatException | ArrayIndexOutOfBoundsException nfex) {
-            ErrorView.display(this.getClass().getName(), nfex.getMessage());
-            this.console.println("Numbers only please.");
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException numex) {
+            ErrorView.display(this.getClass().getName(), numex.getMessage());
         }
-            
+
         return false;
     }
 
     //Other actions go after this-----
     private void customSentence(String[] inputs) throws ArrayIndexOutOfBoundsException {
-        
+
         CustomSentenceGameControl customSentence = new CustomSentenceGameControl();
         customSentence.buildsCustomSentence(inputs);
-        
+
         Game game = CIT360.getCurrentGame();
-        
+
         String person = game.getPerson();
         String adverb = game.getAdverb();
         String verb = game.getVerb();
         String adjective = game.getAdjective();
         String object = game.getObject();
-        
+
         //String sentence = "The " + person + " " + adverb + " " + verb + " the " + adjective + " " + object + "s.";
         this.console.format("The %s %s %s the %s %ss.\n", person, adverb, verb, adjective, object);
-        
-        //game.setTheSentence(sentence);
 
+        //game.setTheSentence(sentence);
         pause(2000);
     }
 }
-

@@ -58,7 +58,7 @@ public class SentenceGameControl {
 
         String[] partsOfSpeech = {"person", "adverb", "verb", "adjective", "object"};
 
-        int random = (int) Math.round(Math.random() * (30 - 1));
+        int random = (int) Math.round(Math.random() * (20 - 1));
         WordSelectorControl wordSelect;
         WordSelectorArrayControl wordSelectArray;
         // for loop with OR for both maps, then case statements
