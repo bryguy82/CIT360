@@ -16,7 +16,6 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import view.ErrorView;
 
-
 /**
  *
  * @author Bryan
@@ -24,20 +23,19 @@ import view.ErrorView;
 public class HibernateDatabaseExample {
 
     public static SessionFactory factory;
- 
+
     public HibernateDatabaseExample() {
         // Empty constructor
     }
-        
+
     public void hibernateExample() {
-        
-        Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
-        cfg.addAnnotatedClass(Subscriber.class);
-        
+
+        Configuration cfg = new Configuration().addAnnotatedClass(Subscriber.class).configure("hibernate.cfg.xml");
+
         try {
             factory = cfg.buildSessionFactory();
-                    
-        } catch(Throwable ex) {
+
+        } catch (Throwable ex) {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
             System.out.println("Failed to start session.");
         }
@@ -46,31 +44,32 @@ public class HibernateDatabaseExample {
 
         factory.close();
     }
-    
-    
-    /* Method to  READ all the subscribers */
-   public void showSubscribers( ){
-      Session session = factory.openSession();
-      Transaction transaction = null;
-      
-      try {
-         transaction = session.beginTransaction();
-         
-         List subscribers = session.createQuery("FROM Subscriber").list();
-         for (Iterator iterator = subscribers.iterator(); iterator.hasNext();){
-             Subscriber subscriber = (Subscriber) iterator.next();
-             System.out.println("Id#: " + subscriber.getSubscriberKey());
-             System.out.println("First name: "+ subscriber.getFirstName());
-             System.out.println("Last name: " + subscriber.getLastName());
-             System.out.println("City: " + subscriber.getCity());
-         }
 
-         transaction.commit();
-      } catch (HibernateException e) {
-         if (transaction != null) transaction.rollback();
-         e.printStackTrace(); 
-      } finally {
-         session.close(); 
-      }
-   }
+    /* Method to  READ all the subscribers */
+    public void showSubscribers() {
+        Session session = factory.openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+
+            List subscribers = session.createQuery("FROM Subscriber").list();
+            for (Iterator iterator = subscribers.iterator(); iterator.hasNext();) {
+                Subscriber subscriber = (Subscriber) iterator.next();
+                System.out.println("Id#: " + subscriber.getSubscriberKey());
+                System.out.println("First name: " + subscriber.getFirstName());
+                System.out.println("Last name: " + subscriber.getLastName());
+                System.out.println("City: " + subscriber.getCity());
+            }
+
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+    }
 }

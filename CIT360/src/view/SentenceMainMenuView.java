@@ -7,6 +7,7 @@ package view;
 
 import control.SentenceGameControl;
 import java.io.IOException;
+import model.WordBank;
 
 /**
  *
@@ -75,9 +76,20 @@ class SentenceMainMenuView extends ViewStarter {
 
         try {
             // Call a function in the SentenceGameControl class
-            String sentenceToShow = SentenceGameControl.makeASentence();
+            WordBank wordBank = SentenceGameControl.makeASentence();
 
-            this.console.println(sentenceToShow);
+            String person = wordBank.getPersonNoun().getPerson();
+            String adverb = wordBank.getAdverb().getSimpleAdverb();
+            String verb = wordBank.getVerb().getVerb();
+            String adjQuantity = wordBank.getAdjective().getQuantity();
+            String adjQuality = wordBank.getAdjective().getQuality();
+            String adjSize = wordBank.getAdjective().getSize();
+            String adjShape = wordBank.getAdjective().getShape();
+            String adjColor = wordBank.getAdjective().getColor();
+            String object = wordBank.getObjectNoun().getObject();
+
+            this.console.format("The %s %s %s the %s %s %s %s %s %ss.\n",
+                    person, adverb, verb, adjQuantity, adjQuality, adjSize, adjShape, adjColor, object);
             pause(3000);
         } catch (ArrayIndexOutOfBoundsException aioobe) {
             ErrorView.display(this.getClass().getName(), aioobe.getMessage());

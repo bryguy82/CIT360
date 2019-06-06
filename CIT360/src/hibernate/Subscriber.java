@@ -16,27 +16,27 @@ import javax.persistence.*;
 public class Subscriber {
 
     public Subscriber() {
-        
+
     }
-    
-    public Subscriber(int subscriberKey, String lastName, String firstName, String city){
+
+    public Subscriber(int subscriberKey, String lastName, String firstName, String city) {
         this.subscriberKey = subscriberKey;
         this.lastName = lastName;
         this.firstName = firstName;
         this.city = city;
     }
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "subscriberKey")
     private int subscriberKey;
-    
+
     @Column(name = "subscriberLastName")
     private String lastName;
-    
+
     @Column(name = "subscriberFirstName")
     private String firstName;
-    
+
     @Column(name = "subscriberCity")
     private String city;
 
@@ -71,10 +71,10 @@ public class Subscriber {
     public void setCity(String city) {
         this.city = city;
     }
-    
+
     @Override
     public String toString() {
         return Integer.toString(subscriberKey) + " " + firstName + " " + lastName + " " + city + ".";
     }
-    
+
 }

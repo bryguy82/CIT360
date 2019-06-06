@@ -4,23 +4,23 @@
     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>    
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mysql</property>
-    <property name="hibernate.connection.username">admin</property>
-    <property name="hibernate.connection.password">cit360</property>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>    
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mysql</property>
+        <property name="hibernate.connection.username">admin</property>
+        <property name="hibernate.connection.password">cit360</property>
 
-    <!-- Select our SQL dialect -->
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <!--  JDBC connection pool settings ... using built-in test pool -->
-    <property name="hibernate.connection.pool_size">1</property>
-    <!-- Set the current session context -->
-    <property name="hibernate.current_session_context_class">thread</property>
-    <!-- Echo all executed SQL to stdout -->
-    <property name="hibernate.show_sql">true</property>
-    <!-- Diable the second level cache -->
-    <property name="hibernate.cache.use_second_level_cache">false</property>
-    <!-- Mapping to the class -->
-    <mapping class="CIT360/src/hibernate.cfg.xml"/>
-  </session-factory>
+        <!-- Select our SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!--  JDBC connection pool settings ... using built-in test pool -->
+        <property name="hibernate.connection.pool_size">1</property>
+        <!-- Set the current session context -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        <!-- Diable the second level cache -->
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        <!-- Mapping to the class -->
+        <mapping class="CIT360/src/hibernate.cfg.xml"/>
+    </session-factory>
 </hibernate-configuration>

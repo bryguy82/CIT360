@@ -11,6 +11,6 @@ package control;
  */
 public interface WordSelectorControl {
 
-    String build(String type, int a, Object[] speechPart);
+    Object build(int a, Object[] speechPart);
 
 }

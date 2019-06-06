@@ -7,7 +7,7 @@ package control;
 
 import cit360.CIT360;
 import java.util.HashMap;
-import model.Game;
+import model.*;
 
 /**
  *
@@ -21,13 +21,7 @@ public class CustomSentenceGameControl {
 
     public void buildsCustomSentence(String[] inputs) {
 
-        Game game = CIT360.getCurrentGame();
-
-        String person = "";
-        String adverb = "";
-        String verb = "";
-        String adjective = "";
-        String object = "";
+        WordBank wordBank = CIT360.getCurrentGame().getWordBank();
 
         // Save the random different parts of speech to the game's wordBank
         HashMap<String, WordSelectorControl> wordLists = new HashMap<>();
@@ -54,28 +48,28 @@ public class CustomSentenceGameControl {
             switch ((partsOfSpeech[i])) {
                 case "person":
                     wordSelect = wordLists.get(partsOfSpeech[i]);
-                    person = wordSelect.build(person, personSelected, partsOfSpeech);
-                    game.setPerson(person);
+                    PersonNoun person = (PersonNoun) wordSelect.build(personSelected, partsOfSpeech);
+                    wordBank.setPersonNoun(person);
                     break;
                 case "adverb":
                     wordSelect = wordLists.get(partsOfSpeech[i]);
-                    adverb = wordSelect.build(adverb, adverbSelected, partsOfSpeech);
-                    game.setAdverb(adverb);
+                    Adverb adverb = (Adverb) wordSelect.build(adverbSelected, partsOfSpeech);
+                    wordBank.setAdverb(adverb);
                     break;
                 case "verb":
                     wordSelectArray = wordArrayLists.get(partsOfSpeech[i]);
-                    verb = wordSelectArray.build(verb, verbSelected, i, partsOfSpeech);
-                    game.setVerb(verb);
+                    Verb verb = (Verb) wordSelectArray.build(verbSelected, i, partsOfSpeech);
+                    wordBank.setVerb(verb);
                     break;
                 case "adjective":
                     wordSelectArray = wordArrayLists.get(partsOfSpeech[i]);
-                    adjective = wordSelectArray.build(adjective, adjectiveSelected, i, partsOfSpeech);
-                    game.setAdjective(adjective);
+                    Adjective adjective = (Adjective) wordSelectArray.build(adjectiveSelected, i, partsOfSpeech);
+                    wordBank.setAdjective(adjective);
                     break;
                 default:
                     wordSelect = wordLists.get(partsOfSpeech[i]);
-                    object = wordSelect.build(object, objectSelected, partsOfSpeech);
-                    game.setObject(object);
+                    ObjectNoun object = (ObjectNoun) wordSelect.build(objectSelected, partsOfSpeech);
+                    wordBank.setObjectNoun(object);
                     break;
             }
         }

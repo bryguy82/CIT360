@@ -13,36 +13,18 @@ import java.io.Serializable;
  */
 public class Verb implements Serializable {
 
-    private String present;
-    private String past;
-    private String future;
+    private String verb;
 
     public Verb() {
         // empty contructor
     }
 
-    public String getPresent() {
-        return present;
+    public String getVerb() {
+        return verb;
     }
 
-    public void setPresent(String present) {
-        this.present = present;
-    }
-
-    public String getPast() {
-        return past;
-    }
-
-    public void setPast(String past) {
-        this.past = past;
-    }
-
-    public String getFuture() {
-        return future;
-    }
-
-    public void setFuture(String future) {
-        this.future = future;
+    public void setVerb(String verb) {
+        this.verb = verb;
     }
 
     @Override

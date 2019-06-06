@@ -11,6 +11,6 @@ package control;
  */
 public interface WordSelectorArrayControl {
 
-    String build(String type, int a, int b, Object[] partsOfSpeechArray);
+    Object build(int a, int b, Object[] partsOfSpeechArray);
 
 }

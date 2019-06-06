@@ -8,7 +8,7 @@ package view;
 import cit360.CIT360;
 import control.CustomSentenceGameControl;
 import java.io.IOException;
-import model.Game;
+import model.WordBank;
 
 /**
  *
@@ -73,16 +73,21 @@ public class SentenceCustomView extends ViewStarter {
         CustomSentenceGameControl customSentence = new CustomSentenceGameControl();
         customSentence.buildsCustomSentence(inputs);
 
-        Game game = CIT360.getCurrentGame();
+        WordBank wordBank = CIT360.getCurrentGame().getWordBank();
 
-        String person = game.getPerson();
-        String adverb = game.getAdverb();
-        String verb = game.getVerb();
-        String adjective = game.getAdjective();
-        String object = game.getObject();
+        String person = wordBank.getPersonNoun().getPerson();
+        String adverb = wordBank.getAdverb().getSimpleAdverb();
+        String verb = wordBank.getVerb().getVerb();
+        String adjQuantity = wordBank.getAdjective().getQuantity();
+        String adjQuality = wordBank.getAdjective().getQuality();
+        String adjSize = wordBank.getAdjective().getSize();
+        String adjShape = wordBank.getAdjective().getShape();
+        String adjColor = wordBank.getAdjective().getColor();
+        String object = wordBank.getObjectNoun().getObject();
 
         //String sentence = "The " + person + " " + adverb + " " + verb + " the " + adjective + " " + object + "s.";
-        this.console.format("The %s %s %s the %s %ss.\n", person, adverb, verb, adjective, object);
+        this.console.format("The %s %s %s the %s %s %s %s %s %ss.\n",
+                person, adverb, verb, adjQuantity, adjQuality, adjSize, adjShape, adjColor, object);
 
         //game.setTheSentence(sentence);
         pause(2000);

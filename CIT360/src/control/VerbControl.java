@@ -7,6 +7,7 @@ package control;
 
 //import cit360.CIT360;
 import java.io.Serializable;
+import model.Verb;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.io.Serializable;
  */
 public class VerbControl implements Serializable, WordSelectorArrayControl {
 
-    public String build(String word, int selection, int listSize, Object[] verbPresentArray) {
+    public Object build(int selection, int listSize, Object[] verbPresentArray) {
 
         verbPresentArray = WordBankControl.buildVerbPresent().toArray();
         Object[] verbPastArray = WordBankControl.buildVerbPast().toArray();
@@ -53,7 +54,10 @@ public class VerbControl implements Serializable, WordSelectorArrayControl {
             }
         }
 
-        return word = verbTenses[listSize][selection].toString();
+        Verb verb = new Verb();
+        verb.setVerb(verbTenses[listSize][selection].toString());
+
+        return verb;
     }
 
     /*

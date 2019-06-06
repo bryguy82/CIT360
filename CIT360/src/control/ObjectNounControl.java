@@ -7,6 +7,7 @@ package control;
 
 //import cit360.CIT360;
 import java.io.Serializable;
+import model.ObjectNoun;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.io.Serializable;
  */
 public class ObjectNounControl implements Serializable, WordSelectorControl {
 
-    public String build(String word, int selection, Object[] objectArray) {
+    public Object build(int selection, Object[] objectArray) {
 
         objectArray = WordBankControl.buildNounObjectQuantity().toArray();
         //selection = (int) Math.round(Math.random() * (30 - 1));
@@ -31,22 +32,9 @@ public class ObjectNounControl implements Serializable, WordSelectorControl {
             selection = selection - objectArray.length;
         }
 
-        word = objectArray[selection].toString();
+        ObjectNoun objectNoun = new ObjectNoun();
+        objectNoun.setObject(objectArray[selection].toString());
 
-        return word;
+        return objectNoun;
     }
-
-//    public static void objectNounSelect(int counter) {
-//
-//        String objectNoun = "";
-//        Object[] objectArray = WordBankControl.buildNounObjectQuantity().toArray();
-//
-//        while (counter > objectArray.length) {
-//            counter = counter - objectArray.length / 2;
-//        }
-//
-//        objectNoun = objectArray[counter].toString();
-//
-//        CIT360.getCurrentGame().getWordBank().setObjectNoun(objectNoun);
-//    }
 }

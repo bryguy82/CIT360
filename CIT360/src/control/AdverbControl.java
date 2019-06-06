@@ -6,6 +6,8 @@
 package control;
 
 import java.io.Serializable;
+import model.Adverb;
+import model.Game;
 //import cit360.CIT360;
 
 /**
@@ -14,7 +16,7 @@ import java.io.Serializable;
  */
 public class AdverbControl implements Serializable, WordSelectorControl {
 
-    public String build(String word, int selection, Object[] adverbArray) {
+    public Object build(int selection, Object[] adverbArray) {
 
         adverbArray = WordBankControl.buildAdverbTree().toArray();
         //selection = (int) Math.round(Math.random() * (30 - 1));
@@ -31,22 +33,9 @@ public class AdverbControl implements Serializable, WordSelectorControl {
             selection = selection - adverbArray.length;
         }
 
-        word = adverbArray[selection].toString();
+        Adverb adverb = new Adverb();
+        adverb.setSimpleAdverb(adverbArray[selection].toString());
 
-        return word;
+        return adverb;
     }
-
-//    public static void adverbSelect(int counter) {
-//
-//        String adverb = "";
-//        Object[] adverbArray = WordBankControl.buildAdverbTree().toArray();
-//
-//        while (counter > adverbArray.length) {
-//            counter = counter - adverbArray.length / 2;
-//        }
-//
-//        adverb = adverbArray[counter].toString();
-//
-//        CIT360.getCurrentGame().getWordBank().setAdverb(adverb);
-//    }
 }

@@ -6,7 +6,7 @@
 package control;
 
 import java.io.Serializable;
-//import cit360.CIT360;
+import model.PersonNoun;
 
 /**
  *
@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public class PersonNounControl implements Serializable, WordSelectorControl {
 
-    public String build(String word, int selection, Object[] personArray) {
+    public Object build(int selection, Object[] personArray) {
 
         personArray = WordBankControl.buildNounPersonQuantity().toArray();
         //selection = (int) Math.round(Math.random() * (30 - 1));
@@ -31,20 +31,9 @@ public class PersonNounControl implements Serializable, WordSelectorControl {
             selection = selection - personArray.length;
         }
 
-        return word = personArray[selection].toString();
-    }
+        PersonNoun personNoun = new PersonNoun();
+        personNoun.setPerson(personArray[selection].toString());
 
-//    public static void personNounSelect(int counter) {
-//
-//        String personNoun = "";
-//        Object[] personArray = WordBankControl.buildNounPersonQuantity().toArray();
-//
-//        while (counter > personArray.length) {
-//            counter = counter - personArray.length / 2;
-//        }
-//
-//        personNoun = personArray[counter].toString();
-//
-//        CIT360.getCurrentGame().getWordBank().setPersonNoun(personNoun);
-//    }
+        return personNoun;
+    }
 }

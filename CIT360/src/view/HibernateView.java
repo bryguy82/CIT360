@@ -52,7 +52,7 @@ public class HibernateView extends ViewStarter {
     public boolean doAction(String[] inputs) throws IOException {
 
         switch (inputs[0]) {
-            case "H":               
+            case "H":
                 showHibernate();
                 break;
             case "R":
@@ -66,7 +66,7 @@ public class HibernateView extends ViewStarter {
     // Add other programs here----- 
     private void showHibernate() {
         HibernateDatabaseExample hibernate = new HibernateDatabaseExample();
-        //hibernate.hibernateExample();
+        hibernate.hibernateExample();
         pause(2000);
     }
 }

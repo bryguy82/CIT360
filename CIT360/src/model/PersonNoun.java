@@ -14,10 +14,13 @@ import java.io.Serializable;
 public class PersonNoun implements Serializable {
 
     private String person;
-//    private String place;
+
+    public PersonNoun() {
+        // Empty constructor
+    }
 
     public PersonNoun(String person) {
-        setPerson(person);
+        //setPerson(person);
     }
 
     public String getPerson() {
