@@ -7,9 +7,7 @@ package view;
 
 import httpUrl.HttpUrlExample;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.net.MalformedURLException;
 
 /**
  *
@@ -75,8 +73,8 @@ public class HttpUrlView extends ViewStarter {
         try {
             String output = httpUrlExample.httpUrl();
             this.console.println(output);
-        } 
-        catch (IOException ex) {
+        } catch (IOException ex) {
+            this.console.println(httpUrlExample.getOutputMessage());
             ErrorView.display(this.getClass().getName(), ex.getMessage());
         } finally {
             if (httpUrlExample.getConnect() != null) {

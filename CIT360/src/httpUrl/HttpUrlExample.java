@@ -27,7 +27,10 @@ public class HttpUrlExample {
     URL url = null;
     HttpURLConnection connect = null;
     BufferedReader reader = null;
-    
+    String outputMessage = "";
+    String message = "";
+    int code = 0;
+        
     // String to hold the data
     String websiteData = null;
     
@@ -40,7 +43,9 @@ public class HttpUrlExample {
         connect.setRequestMethod("GET");
         connect.connect();
         
-        //connect.setDoOutput(true);
+        message = connect.getResponseMessage();
+        code = connect.getResponseCode();
+        outputMessage = "Everything is " + message.concat(" code#: ") + code;
         
         InputStream inputStream = connect.getInputStream();
         StringBuilder buffer = new StringBuilder();
@@ -60,7 +65,7 @@ public class HttpUrlExample {
             return null;
         }
         
-        websiteData = buffer.toString();
+        websiteData = outputMessage.concat("\n" + buffer.toString());
         
         return websiteData;
     }
@@ -71,5 +76,9 @@ public class HttpUrlExample {
 
     public HttpURLConnection getConnect() {
         return connect;
+    }
+    
+    public String getOutputMessage() {
+        return outputMessage;
     }
 }
