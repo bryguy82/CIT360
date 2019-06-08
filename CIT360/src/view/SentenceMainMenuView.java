@@ -21,7 +21,7 @@ class SentenceMainMenuView extends ViewStarter {
 
     @Override
     protected String getMessage() {
-        return "Here we are at the Main Menu.\n\n"
+        return "Here we are at the Sentence Menu.\n\n"
                 + "R - Random Sentence\n"
                 + "C - Custom sentence\n"
                 + "Q - Quit Game.\n";

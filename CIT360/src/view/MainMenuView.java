@@ -25,6 +25,7 @@ public class MainMenuView extends ViewStarter {
                 + "T - Threads, Executors, and Runnables\n"
                 + "J - JSON\n"
                 + "H - Hibernate\n"
+                + "U - HttpUrl\n"
                 + "Q - Quit";
     }
 
@@ -70,6 +71,9 @@ public class MainMenuView extends ViewStarter {
             case "H":
                 showHibernate();
                 break;
+            case "U":
+                showHttpUrl();
+                break;
             case "Q":
                 this.console.println("Thank you for coming. Come back soon!");
                 return false;
@@ -108,5 +112,11 @@ public class MainMenuView extends ViewStarter {
         pause(2000);
         View hibernateView = new HibernateView();
         hibernateView.displayView();
+    }
+    
+    private void showHttpUrl() throws IOException {
+        pause(2000);
+        View httpUrl = new HttpUrlView();
+        httpUrl.displayView();
     }
 }

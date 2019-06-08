@@ -16,7 +16,7 @@ public class Game implements Serializable {
     private Game theGame;
     private Player thePlayer;
     private WordBank wordBank;
-//    private String theSentence;
+//    private Sentence sentence;
 
     public Game() {
         // Empty constructor        

@@ -72,6 +72,7 @@ public class StartSentenceView extends ViewStarter {
         this.console.println("Welcome " + playerName + ".");
 
         pause(2000);
+        // TODO initialize the json array content for the game here.
         SentenceMainMenuView mainMenu = new SentenceMainMenuView();
         mainMenu.displayView();
         pause(2000);

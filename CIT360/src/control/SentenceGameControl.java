@@ -24,12 +24,10 @@ public class SentenceGameControl {
         Player player = new Player();
         Game game = new Game();
         WordBank wordBank = new WordBank();
-        //String sentence = "";
 
         player.setName(playerName);
         game.setThePlayer(player);
         game.setWordBank(wordBank);
-        //game.setTheSentence(sentence);
 
         return game;
     }
