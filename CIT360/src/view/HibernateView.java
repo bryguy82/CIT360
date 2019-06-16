@@ -66,7 +66,7 @@ public class HibernateView extends ViewStarter {
     // Add other programs here----- 
     private void showHibernate() {
         HibernateDatabaseExample hibernate = new HibernateDatabaseExample();
-        hibernate.hibernateExample();
+        //hibernate.hibernateExample();
         pause(2000);
     }
 }

@@ -72,7 +72,7 @@ public class WordBankControl implements Serializable {
         
         return addPlace;
     }*/
- /*---------------Object Quantity------------------------20*/
+ /*---------------Object Quantity------------------------18*/
     public static TreeSet<String> buildNounObjectQuantity() {
 
         TreeSet<String> addObject = new TreeSet<>();
@@ -100,7 +100,7 @@ public class WordBankControl implements Serializable {
     }
 
     /*-----------BUILD 3 VERB TREES BELOW---------------------*/
- /*---------------Present Quantity-----------------------20*/
+ /*---------------Present Quantity-----------------------18*/
     public static TreeSet<String> buildVerbPresent() {
 
         TreeSet<String> addVerb = new TreeSet<>();
@@ -127,7 +127,7 @@ public class WordBankControl implements Serializable {
         return addVerb;
     }
 
-    /*---------------Past Quantity--------------------------20*/
+    /*---------------Past Quantity--------------------------18*/
     public static TreeSet<String> buildVerbPast() {
 
         TreeSet<String> addVerb = new TreeSet<>();
@@ -154,7 +154,7 @@ public class WordBankControl implements Serializable {
         return addVerb;
     }
 
-    /*---------------Future Quantity------------------------20*/
+    /*---------------Future Quantity------------------------18*/
     public static TreeSet<String> buildVerbFuture() {
 
         TreeSet<String> addVerb = new TreeSet<>();
@@ -182,7 +182,7 @@ public class WordBankControl implements Serializable {
     }
 
     /*----------BUILD 1 ADVERB TREE BELOW---------------------*/
- /*---------------BeforeBe Quantity----------------------20*/
+ /*---------------BeforeBe Quantity----------------------18*/
     public static TreeSet<String> buildAdverbTree() {
 
         TreeSet<String> addAdverb = new TreeSet<>();

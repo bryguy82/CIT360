@@ -8,6 +8,7 @@ package view;
 import cit360.CIT360;
 import control.CustomSentenceGameControl;
 import java.io.IOException;
+//import java.util.HashMap;
 import model.WordBank;
 
 /**
@@ -89,6 +90,11 @@ public class SentenceCustomView extends ViewStarter {
         this.console.format("The %s %s %s the %s %s %s %s %s %ss.\n",
                 person, adverb, verb, adjQuantity, adjQuality, adjSize, adjShape, adjColor, object);
 
+//        Option for holding various sentence structures
+//        HashMap<Integer, String> phrases = new HashMap<>();
+//        phrases.put(1, " " + person + " \n");
+//        
+//        (person, adverb, verb, adjQuantity, adjQuality, adjSize, adjShape, adjColor, object);
         //game.setTheSentence(sentence);
         pause(2000);
     }

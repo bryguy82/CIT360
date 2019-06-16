@@ -32,14 +32,18 @@ public class HibernateDatabaseExample {
 
         Configuration cfg = new Configuration().addAnnotatedClass(Subscriber.class).configure("hibernate.cfg.xml");
 
+        System.out.println("test message 1");
         try {
-            factory = cfg.buildSessionFactory();
-
-        } catch (Throwable ex) {
+            if (cfg != null) {
+                factory = cfg.buildSessionFactory();  //ERROR appears here.
+                System.out.println("test message 2");
+            }
+            System.out.println("test message 3");
+        } catch (HibernateException ex) {
             ErrorView.display(this.getClass().getName(), ex.getMessage());
             System.out.println("Failed to start session.");
         }
-
+        System.out.println("test message 4");
         showSubscribers();
 
         factory.close();
@@ -47,7 +51,9 @@ public class HibernateDatabaseExample {
 
     /* Method to  READ all the subscribers */
     public void showSubscribers() {
+        System.out.println("test message 5");
         Session session = factory.openSession();
+        System.out.println("test message 6");
         Transaction transaction = null;
 
         try {

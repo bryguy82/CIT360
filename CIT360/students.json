@@ -1,13 +1,1 @@
-[{
-        "firstName": "Michael",
-        "lastName": "Douglas",
-        "favoriteColor": "black"
-    }, {
-        "firstName": "John",
-        "lastName": "Smith",
-        "favoriteColor": "red"
-    }, {
-        "firstName": "Sarah",
-        "lastName": "Johnson",
-        "favoriteColor": "purple"
-    }]
+[{"firstName":"Michael","lastName":"Douglas","favoriteColor":"black"},{"firstName":"John","lastName":"Smith","favoriteColor":"red"},{"firstName":"Sarah","lastName":"Johnson","favoriteColor":"purple"}]
